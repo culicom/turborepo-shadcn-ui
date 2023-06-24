@@ -1,0 +1,17 @@
+{
+  "home": {
+    "hero": {
+      "tag": "Need a website?",
+      "title": "Professionele websites voor (startende) ondernemers.",
+      "payline": "Voor een vast bedrag per maand kun je altijd maatwerk verwachten en ben je zorgeloos online (inclusief hosting en domeinnaam). Tevens is je website maandelijks opzegbaar."
+    }
+  },
+  "features": {
+    "localisation": "Switch to Dutch",
+    "hero": {
+      "tag": "Features first",
+      "title": "What makes Kobalt different",
+      "payline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec lacus nec urna imperdiet venenatis in at magna. Nulla ultrices semper dui, at maximus risus ultrices id."
+    }
+  }
+}
