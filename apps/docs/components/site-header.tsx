@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "ui";
-import { cn } from "utils";
+import { cn } from "lib";
 
 import { siteConfig } from "../config/site";
 import { HamburgerToggle } from "./hamburger-toggle";

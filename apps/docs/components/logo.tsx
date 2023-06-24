@@ -1,6 +1,6 @@
 import { Inter, PT_Sans } from "next/font/google";
 
-import { cn } from "utils";
+import { cn } from "lib";
 
 import { H3 } from "ui/typography/h3";
 

@@ -97,6 +97,7 @@ importers:
       clsx: '*'
       escape-html: '*'
       eslint-config-custom: workspace:*
+      lib: workspace:*
       lucide-react: '*'
       next: '*'
       next-intl: 3.0.0-beta.4
@@ -113,7 +114,6 @@ importers:
       tsconfig: workspace:*
       typescript: '*'
       ui: workspace:*
-      utils: workspace:*
       zod: '*'
     dependencies:
       '@hookform/resolvers': 3.1.1_react-hook-form@7.45.0
@@ -125,6 +125,7 @@ importers:
       '@radix-ui/react-switch': 1.0.3_hrrtw4it2dqo6rzcqzvl36ff7i
       '@radix-ui/react-tabs': 1.0.4_hrrtw4it2dqo6rzcqzvl36ff7i
       '@radix-ui/react-toast': 1.1.4_hrrtw4it2dqo6rzcqzvl36ff7i
+      lib: link:../../packages/lib
       lucide-react: 0.244.0_react@18.2.0
       next: 13.4.7_biqbaboplfbrettd7655fr4n2y
       next-intl: 3.0.0-beta.4_next@13.4.7+react@18.2.0
@@ -137,7 +138,6 @@ importers:
       tailwind-merge: 1.13.2
       tailwindcss-animate: 1.0.6_tailwindcss@3.3.2
       ui: link:../../packages/ui
-      utils: link:../../packages/lib
       zod: 3.21.4
     devDependencies:
       '@types/node': 20.3.1
@@ -188,6 +188,7 @@ importers:
       clsx: ^1.2.1
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
+      lib: workspace:*
       lucide-react: ^0.244.0
       postcss: ^8.4.24
       react: ^17.0.2
@@ -196,7 +197,6 @@ importers:
       tailwindcss-animate: ^1.0.6
       tsconfig: workspace:*
       typescript: ^4.5.2
-      utils: workspace:*
     dependencies:
       '@radix-ui/react-slot': 1.0.2_xjdyz4olyzaeqggdqltjb7j4k4
       class-variance-authority: 0.6.0_typescript@4.9.5
@@ -210,12 +210,12 @@ importers:
       autoprefixer: 10.4.14_postcss@8.4.24
       eslint: 7.32.0
       eslint-config-custom: link:../eslint-config-custom
+      lib: link:../lib
       postcss: 8.4.24
       react: 17.0.2
       tailwindcss: 3.3.2
       tsconfig: link:../tsconfig
       typescript: 4.9.5
-      utils: link:../lib
 
 packages:
 

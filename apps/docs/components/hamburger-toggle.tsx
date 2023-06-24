@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { siteConfig } from "../config/site";
-import { cn } from "utils";
+import { cn } from "lib";
 import {
   Sheet,
   SheetContent,

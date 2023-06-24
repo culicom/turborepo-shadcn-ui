@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { cn } from "utils";
+import { cn } from "lib";
 
 import { H2 } from "ui/typography/h2";
 import { H3 } from "ui/typography/h3";

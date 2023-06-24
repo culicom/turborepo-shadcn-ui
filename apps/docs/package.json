@@ -31,7 +31,7 @@
     "tailwindcss-animate": "*",
     "zod": "*",
     "ui": "workspace:*",
-    "utils": "workspace:*"
+    "lib": "workspace:*"
   },
   "devDependencies": {
     "accept-language": "*",

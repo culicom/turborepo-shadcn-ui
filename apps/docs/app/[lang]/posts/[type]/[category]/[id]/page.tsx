@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Badge } from "ui";
-import { cn } from "utils";
+import { cn } from "lib";
 
 import { Renderer } from "../../../../../../components/renderer";
 import { H1 } from "ui/typography/h1";
