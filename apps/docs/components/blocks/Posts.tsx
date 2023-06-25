@@ -53,7 +53,7 @@ export async function PostBlock({
   if (!data.docs) return null;
 
   return (
-    <div>
+    <div className="my-16 md:my-32">
       <article className="mx-auto my-12 max-w-3xl md:text-center">
         <H4>{name}</H4>
         <H2 className="mt-0 border-none">

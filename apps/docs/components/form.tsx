@@ -43,7 +43,7 @@ export function ProfileForm() {
   }
 
   return (
-    <div className="max-w-3xl py-16 md:mx-auto ">
+    <div className="max-w-3xl my-16 md:my-32 md:mx-auto ">
       <article className="md:text-center">
         <H4>contact</H4>
         <H2 className="mt-0 border-none">Lets get in touch 👋</H2>

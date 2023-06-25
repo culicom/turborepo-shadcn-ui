@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { useTranslations } from "next-intl";
 
 import { Alert, AlertDescription, AlertTitle } from "ui/components/alert";
+
 import { Button } from "ui";
 import { Hero } from "../../../../components/blocks/Hero";
 import { H2, Code } from "ui/typography";
@@ -26,7 +27,7 @@ export default function Page(props: any) {
         payline={t("hero.payline")}
       />
 
-      <div className="my-8">
+      <div className="my-16 md:my-32">
         {/* First */}
         <section className="grid grid-cols-1 py-8 md:grid-cols-2">
           <div className="mb-4 flex flex-col justify-center space-y-4 md:mb-0 md:mr-8">

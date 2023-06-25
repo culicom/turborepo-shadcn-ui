@@ -7,7 +7,7 @@ import {
 
 export async function AccordionBlock() {
   return (
-    <div className="py-16 mx-auto max-w-4xl gap-2">
+    <div className="my-16 md:my-32 mx-auto max-w-4xl gap-2">
       <article className="prose mx-auto mb-12 text-center">
         <span className="text-md text-blue-700 font-extrabold tracking-tight lg:text-lg">
           Faq

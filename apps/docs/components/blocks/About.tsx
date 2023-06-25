@@ -86,7 +86,7 @@ const data = [
 
 export function AboutBlock() {
   return (
-    <div className="my-16">
+    <div className="my-16 md:my-32">
       <article className="mx-auto max-w-3xl md:text-center">
         <H4>Lorem</H4>
 
