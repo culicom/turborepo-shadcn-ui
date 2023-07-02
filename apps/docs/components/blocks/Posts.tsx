@@ -55,16 +55,16 @@ export async function PostBlock({
   return (
     <div className="my-16 md:my-32">
       <article className="mx-auto my-12 max-w-3xl md:text-center">
-        <H4>{name}</H4>
+        <H4>{name === "work" ? "showcase" : name}</H4>
         <H2 className="mt-0 border-none">
           {name === "work" ? "Waar we trots op zijn" : "Het laatste nieuws"}
         </H2>
 
-        <P>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+        <P className="text-lg text-muted-foreground">
+          Hieronder zie je een greep uit het werk van Kobalt. We maken
+          razendsnelle websites die <span>gebruiksvriendelijk</span>,{" "}
+          <span>toegankelijk</span> en <span>modern</span> zijn, passend bij
+          jouw huisstijl. Bekijk onze showcase en laat je inspireren.
         </P>
       </article>
 
@@ -81,7 +81,7 @@ export async function PostBlock({
                   height={500}
                   width={500}
                   className={cn("my-auto mx-auto object-cover", {
-                    "aspect-square": doc?.type?.name === "work",
+                    "aspect-square": doc?.type?.name === "showcase",
                     "aspect-[5/3]": doc?.type?.name === "blog",
                   })}
                 />
@@ -89,7 +89,7 @@ export async function PostBlock({
             </CardHeader>
 
             <CardContent className="px-0 py-2">
-              <Badge className="mb-2 rounded-sm" variant="action">
+              <Badge className="mb-2 rounded-sm">
                 <Link
                   href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}`}
                 >

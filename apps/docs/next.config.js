@@ -7,3 +7,4 @@ module.exports = withNextIntl({
   reactStrictMode: true,
   transpilePackages: ["ui"],
 });
+// "#0806B6"

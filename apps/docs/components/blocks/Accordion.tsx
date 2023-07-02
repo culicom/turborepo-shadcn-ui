@@ -4,24 +4,21 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "ui";
+import { H2, H4, P } from "ui/typography";
 
 export async function AccordionBlock() {
   return (
     <div className="my-16 md:my-32 mx-auto max-w-4xl gap-2">
       <article className="prose mx-auto mb-12 text-center">
-        <span className="text-md text-blue-700 font-extrabold tracking-tight lg:text-lg">
-          Faq
-        </span>
-        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-          Veelgestelde vragen
-        </h2>
+        <H4>Faq</H4>
+        <H2 className="mt-0 border-none">Veelgestelde vragen</H2>
 
-        <p className="leading-7 text-lg text-muted-foreground [&:not(:first-child)]:mt-6 max-w-4xl mx-auto">
+        <P className="text-lg text-muted-foreground">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.{" "}
-        </p>
+        </P>
       </article>
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">

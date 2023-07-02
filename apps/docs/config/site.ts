@@ -1,4 +1,4 @@
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Next.js",
@@ -14,12 +14,12 @@ export const siteConfig = {
       href: "/service",
     },
     {
-      title: "Work",
-      href: "/posts/work",
+      title: "Showcase",
+      href: "/posts/showcase",
     },
     {
       title: "Blog",
       href: "/posts/blog",
     },
   ],
-}
+};

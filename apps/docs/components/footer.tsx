@@ -38,7 +38,10 @@ export async function Footer() {
           stroke-linejoin="miter"
         ></path>
       </svg> */}
-      <footer className="bg-blue-700 dark:bg-gray-900" aria-label="Site Footer">
+      <footer
+        className="bg-blue-950 py-4 dark:bg-gray-900"
+        aria-label="Site Footer"
+      >
         <div className="container mx-auto py-8 text-white sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>

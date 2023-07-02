@@ -12,6 +12,7 @@ import { ThemeProvider } from "./../../components/theme-provider";
 
 import { siteConfig } from "../../config/site";
 import { fontSans } from "../../lib/fonts";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
@@ -44,7 +45,8 @@ export default function RootLayout({ children, params }: any) {
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="container flex min-h-screen flex-col">
               <SiteHeader />
-              <div className="flex-1">{children}</div>
+
+              {children}
 
               <Adam />
               <ProfileForm />
@@ -54,6 +56,11 @@ export default function RootLayout({ children, params }: any) {
             <TailwindIndicator />
           </ThemeProvider>
         </body>
+        <Script
+          strategy="afterInteractive"
+          src={`https://umami.culicom.amsterdam/script.js`}
+          data-website-id={process.env.UMAMI_ID}
+        ></Script>
       </html>
     </>
   );

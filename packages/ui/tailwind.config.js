@@ -6,6 +6,7 @@ module.exports = {
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
+    "../../packages/ui/typography/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "../../packages/ui/components/**/*.{ts,tsx}",
   ],
@@ -66,6 +67,19 @@ module.exports = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       keyframes: {
+        flicker: {
+          // from: { height: 0 },
+          // to: { height: "var(--radix-accordion-content-height)" },
+          "0%": {
+            opacity: 0,
+          },
+          "50%": {
+            opacity: 1,
+          },
+          "100%": {
+            opacity: 0,
+          },
+        },
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -76,6 +90,7 @@ module.exports = {
         },
       },
       animation: {
+        flicker: "flicker 0.3s infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },

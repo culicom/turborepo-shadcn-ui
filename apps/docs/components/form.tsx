@@ -18,10 +18,11 @@ import { H4 } from "ui/typography/h4";
 import { P } from "ui/typography/p";
 
 const profileFormSchema = z.object({
-  username: z.string(),
+  name: z.string(),
+  company: z.string(),
   email: z
     .string({
-      required_error: "Please select an email to display.",
+      required_error: "Please select an email to display.", // translate
     })
     .email(),
   message: z.string(),
@@ -47,7 +48,7 @@ export function ProfileForm() {
       <article className="md:text-center">
         <H4>contact</H4>
         <H2 className="mt-0 border-none">Lets get in touch 👋</H2>
-        <P className="">
+        <P className="text-lg text-muted-foreground">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -57,15 +58,29 @@ export function ProfileForm() {
 
       <div className="mx-auto max-w-4xl gap-2 rounded-lg py-12 md:my-12 md:p-8 md:shadow-lg">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
               control={form.control}
-              name="username"
+              name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Username</FormLabel>
+                  <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="shadcn" {...field} />
+                    <Input placeholder="John Doe" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="company"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Company</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Jouw bedrijf hier" {...field} />
                   </FormControl>
 
                   <FormMessage />

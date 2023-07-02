@@ -35,10 +35,7 @@ export default async function Page(props: any) {
   return (
     <article className="mx-auto max-w-3xl py-8 ">
       <div className="my-4 flex flex-col justify-center">
-        <Badge
-          className="mb-2 rounded-sm md:mx-auto w-fit mb-4"
-          variant="action"
-        >
+        <Badge className="rounded-sm md:mx-auto w-fit mb-4">
           <Link href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}`}>
             {doc?.category[0]?.name}
           </Link>
@@ -54,7 +51,7 @@ export default async function Page(props: any) {
           width={600}
           className={cn("my-auto mx-auto w-full object-cover", {
             "aspect-[6/4]": doc.type?.name === "blog",
-            "aspect-square": doc.type?.name === "work",
+            "aspect-square": doc.type?.name === "showcase",
           })}
         />
       </div>

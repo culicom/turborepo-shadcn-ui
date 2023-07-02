@@ -21,7 +21,7 @@ export async function Posts({ docs }: any) {
                 height={500}
                 width={500}
                 className={cn("my-auto mx-auto object-cover", {
-                  "aspect-square": doc?.type?.name === "work",
+                  "aspect-square": doc?.type?.name === "showcase",
                   "aspect-[5/3]": doc?.type?.name === "blog",
                 })}
               />
@@ -29,7 +29,7 @@ export async function Posts({ docs }: any) {
           </CardHeader>
 
           <CardContent className="px-0 py-2">
-            <Badge className="mb-2 rounded-sm" variant="action">
+            <Badge className="mb-2 rounded-sm">
               <Link
                 href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}`}
               >
