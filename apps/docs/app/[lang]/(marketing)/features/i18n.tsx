@@ -4,7 +4,6 @@ import { useCallback, useState } from "react";
 
 import { Button, Label } from "ui";
 import { Loader2 } from "lucide-react";
-import { P } from "ui/typography";
 
 const i18n = {
   nl: "Kobalt vertaalt jouw website slim met behulp van AI. Zo bereik je meer klanten, met minder moeite.",
@@ -25,17 +24,19 @@ function Blinker() {
 
 export function I18n() {
   const [completedTyping, setCompletedTyping] = useState(null);
-  const [displayResponse, setDisplayResponse] = useState(
-    "Kobalt laat websites aansluiten op het publiek. Voor een website van een club of bar is een darkmode bijvoorbeeld cruciaal."
-  );
-
+  const [nextLocale, setNextLocale] = useState("en");
+  const [displayResponse, setDisplayResponse] = useState(i18n["nl"]);
+  // const fetchData = fetch("/features/i18n")
+  //   .then((res) => res.json())
+  //   .then((x) => console.log(x));
+  // console.log(fetchData, "test");
   const startTyping = useCallback(() => {
     setCompletedTyping(false);
     setDisplayResponse("");
 
     setTimeout(() => {
       let i = 0;
-      const stringResponse = i18n?.en;
+      const stringResponse = i18n[nextLocale];
 
       const intervalId = setInterval(() => {
         setDisplayResponse(stringResponse.slice(0, i));
@@ -45,15 +46,17 @@ export function I18n() {
         if (i > stringResponse.length) {
           clearInterval(intervalId);
           setCompletedTyping(true);
+
+          setNextLocale(nextLocale === "nl" ? "en" : "nl");
         }
       }, 20);
 
       return () => clearInterval(intervalId);
     }, 500);
-  }, []);
+  }, [nextLocale]);
 
   return (
-    <div className="flex flex-col min-h-[12rem] h-full w-full items-stretch justify-between">
+    <div className="flex flex-col h-72 lg:h-full w-full items-stretch justify-between">
       <div />
       <Label className="text-center text-md text-muted-foreground">
         {displayResponse}
@@ -64,7 +67,7 @@ export function I18n() {
           {completedTyping === false ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           ) : null}
-          Translate
+          {nextLocale === "en" ? "Vertaal naar engels" : "Translate to dutch"}
         </Button>
       </div>
     </div>

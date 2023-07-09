@@ -9,6 +9,7 @@ import { H4 } from "ui/typography/h4";
 import { P } from "ui/typography/p";
 
 import { Badge, Card, CardContent, CardHeader } from "ui";
+import { badges } from "../../lib/colors";
 
 type QueryType = {
   token: string;
@@ -18,9 +19,10 @@ type QueryType = {
 
 async function getPosts(PostProps: QueryType) {
   const data = await fetch(
-    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${PostProps?.locale}&where[type][equals]=${PostProps.id}`,
+    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${PostProps?.locale}&where[type][equals]=${PostProps.id}&limit=3`,
     {
       credentials: "include",
+      next: { revalidate: 60 },
       headers: {
         "Content-Type": "application/json",
       },
@@ -55,16 +57,26 @@ export async function PostBlock({
   return (
     <div className="my-16 md:my-32">
       <article className="mx-auto my-12 max-w-3xl md:text-center">
-        <H4>{name === "work" ? "showcase" : name}</H4>
-        <H2 className="mt-0 border-none">
-          {name === "work" ? "Waar we trots op zijn" : "Het laatste nieuws"}
+        <H4>{name}</H4>
+        <H2 className="text-blue-950 dark:text-white mt-0 border-none">
+          {name === "showcase" ? "Waar we trots op zijn" : "Het laatste nieuws"}
         </H2>
 
         <P className="text-lg text-muted-foreground">
-          Hieronder zie je een greep uit het werk van Kobalt. We maken
-          razendsnelle websites die <span>gebruiksvriendelijk</span>,{" "}
-          <span>toegankelijk</span> en <span>modern</span> zijn, passend bij
-          jouw huisstijl. Bekijk onze showcase en laat je inspireren.
+          {name === "showcase" ? (
+            <>
+              Hieronder zie je een greep uit het werk van Kobalt. We maken
+              razendsnelle websites die <span>gebruiksvriendelijk</span>,{" "}
+              <span>toegankelijk</span> en <span>modern</span> zijn. Dat doen we
+              altijd passend bij jouw huisstijl. Bekijk onze showcase en laat je
+              inspireren.
+            </>
+          ) : (
+            <>
+              Ben je benieuwd naar de kennis die schuilgaat achter onze ideeën?
+              Lees dan onze blogposts.
+            </>
+          )}
         </P>
       </article>
 
@@ -89,7 +101,13 @@ export async function PostBlock({
             </CardHeader>
 
             <CardContent className="px-0 py-2">
-              <Badge className="mb-2 rounded-sm">
+              <Badge
+                variant={badges["category"][doc?.category[0]?.slug]}
+                className={cn("mb-2 rounded-sm", {
+                  "bg-gray-300 hover:bg-gray-400":
+                    doc?.category[0]?.name === "mobile",
+                })}
+              >
                 <Link
                   href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}`}
                 >
@@ -110,12 +128,9 @@ export async function PostBlock({
 
       <Link
         className="link mt-4 flex justify-end "
-        href={`/posts/${name === "blog" ? "blog" : "work"}`}
+        href={`/posts/${name === "blog" ? "blog" : "showcase"}`}
       >
-        {name === "work" || name === "portfolio"
-          ? "Zie meer werk"
-          : "Ga naar blog"}
-        →
+        {name === "showcase" ? "Zie meer werk" : "Ga naar blog"}→
       </Link>
     </div>
   );

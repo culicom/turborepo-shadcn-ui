@@ -1,0 +1,51 @@
+{
+  "name": "houtman",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "PORT=3004 next dev",
+    "build": "next build",
+    "start": "PORT=3004 next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "*",
+    "@radix-ui/react-accordion": "*",
+    "@radix-ui/react-dialog": "*",
+    "@radix-ui/react-label": "*",
+    "@radix-ui/react-select": "^*",
+    "@radix-ui/react-slot": "*",
+    "@radix-ui/react-switch": "*",
+    "@radix-ui/react-tabs": "*",
+    "@radix-ui/react-toast": "*",
+    "lucide-react": "*",
+    "next-intl": "3.0.0-beta.4",
+    "next-themes": "*",
+    "next": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-hook-form": "*",
+    "sharp": "*",
+    "slate": "*",
+    "tailwind-merge": "*",
+    "tailwindcss-animate": "*",
+    "zod": "*",
+    "ui": "workspace:*",
+    "lib": "workspace:*"
+  },
+  "devDependencies": {
+    "accept-language": "*",
+    "class-variance-authority": "*",
+    "clsx": "*",
+    "escape-html": "*",
+    "@types/node": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "autoprefixer": "*",
+    "eslint-config-custom": "workspace:*",
+    "postcss": "*",
+    "tailwindcss": "*",
+    "tsconfig": "workspace:*",
+    "typescript": "*"
+  }
+}

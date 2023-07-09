@@ -23,6 +23,7 @@ importers:
       escape-html: ^1.0.3
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
+      framer-motion: 10.12.18
       lucide-react: 0.105.0-alpha.4
       next: ^13.4.1
       next-themes: ^0.2.1
@@ -49,6 +50,7 @@ importers:
       '@radix-ui/react-switch': 1.0.3_hrrtw4it2dqo6rzcqzvl36ff7i
       '@radix-ui/react-tabs': 1.0.4_hrrtw4it2dqo6rzcqzvl36ff7i
       '@radix-ui/react-toast': 1.1.4_hrrtw4it2dqo6rzcqzvl36ff7i
+      framer-motion: 10.12.18_biqbaboplfbrettd7655fr4n2y
       lucide-react: 0.105.0-alpha.4_react@18.2.0
       next: 13.4.7_biqbaboplfbrettd7655fr4n2y
       next-themes: 0.2.1_5v7kwk6wz2hvmegftnptprfjvm
@@ -74,7 +76,7 @@ importers:
       postcss: 8.4.24
       prettier: 2.8.8
       tailwindcss: 3.3.2
-      turbo: 1.10.6
+      turbo: 1.10.7
       typescript: 4.9.5
 
   apps/coach:
@@ -155,6 +157,162 @@ importers:
       typescript: 5.1.3
 
   apps/docs:
+    specifiers:
+      '@hookform/resolvers': '*'
+      '@radix-ui/react-accordion': '*'
+      '@radix-ui/react-dialog': '*'
+      '@radix-ui/react-label': '*'
+      '@radix-ui/react-select': ^*
+      '@radix-ui/react-slot': '*'
+      '@radix-ui/react-switch': '*'
+      '@radix-ui/react-tabs': '*'
+      '@radix-ui/react-toast': '*'
+      '@types/node': '*'
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      accept-language: '*'
+      autoprefixer: '*'
+      class-variance-authority: '*'
+      clsx: '*'
+      escape-html: '*'
+      eslint-config-custom: workspace:*
+      framer-motion: '*'
+      lib: workspace:*
+      lucide-react: '*'
+      next: '*'
+      next-intl: 3.0.0-beta.4
+      next-themes: '*'
+      postcss: '*'
+      react: '*'
+      react-dom: '*'
+      react-hook-form: '*'
+      sharp: '*'
+      slate: '*'
+      tailwind-merge: '*'
+      tailwindcss: '*'
+      tailwindcss-animate: '*'
+      tsconfig: workspace:*
+      typescript: '*'
+      ui: workspace:*
+      zod: '*'
+    dependencies:
+      '@hookform/resolvers': 3.1.1_react-hook-form@7.45.0
+      '@radix-ui/react-accordion': 1.1.2_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-dialog': 1.0.4_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-label': 2.0.2_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-select': 1.2.2_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-slot': 1.0.2_i73ekzlbntu7jol6ph2fvy4mga
+      '@radix-ui/react-switch': 1.0.3_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-tabs': 1.0.4_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-toast': 1.1.4_hrrtw4it2dqo6rzcqzvl36ff7i
+      framer-motion: 10.12.18_biqbaboplfbrettd7655fr4n2y
+      lib: link:../../packages/lib
+      lucide-react: 0.244.0_react@18.2.0
+      next: 13.4.7_biqbaboplfbrettd7655fr4n2y
+      next-intl: 3.0.0-beta.4_next@13.4.7+react@18.2.0
+      next-themes: 0.2.1_5v7kwk6wz2hvmegftnptprfjvm
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-hook-form: 7.45.0_react@18.2.0
+      sharp: 0.31.3
+      slate: 0.94.1
+      tailwind-merge: 1.13.2
+      tailwindcss-animate: 1.0.6_tailwindcss@3.3.2
+      ui: link:../../packages/ui
+      zod: 3.21.4
+    devDependencies:
+      '@types/node': 20.3.1
+      '@types/react': 18.2.14
+      '@types/react-dom': 18.2.6
+      accept-language: 3.0.18
+      autoprefixer: 10.4.14_postcss@8.4.24
+      class-variance-authority: 0.6.0_typescript@5.1.3
+      clsx: 1.2.1
+      escape-html: 1.0.3
+      eslint-config-custom: link:../../packages/eslint-config-custom
+      postcss: 8.4.24
+      tailwindcss: 3.3.2
+      tsconfig: link:../../packages/tsconfig
+      typescript: 5.1.3
+
+  apps/houtman:
+    specifiers:
+      '@hookform/resolvers': '*'
+      '@radix-ui/react-accordion': '*'
+      '@radix-ui/react-dialog': '*'
+      '@radix-ui/react-label': '*'
+      '@radix-ui/react-select': ^*
+      '@radix-ui/react-slot': '*'
+      '@radix-ui/react-switch': '*'
+      '@radix-ui/react-tabs': '*'
+      '@radix-ui/react-toast': '*'
+      '@types/node': '*'
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      accept-language: '*'
+      autoprefixer: '*'
+      class-variance-authority: '*'
+      clsx: '*'
+      escape-html: '*'
+      eslint-config-custom: workspace:*
+      lib: workspace:*
+      lucide-react: '*'
+      next: '*'
+      next-intl: 3.0.0-beta.4
+      next-themes: '*'
+      postcss: '*'
+      react: '*'
+      react-dom: '*'
+      react-hook-form: '*'
+      sharp: '*'
+      slate: '*'
+      tailwind-merge: '*'
+      tailwindcss: '*'
+      tailwindcss-animate: '*'
+      tsconfig: workspace:*
+      typescript: '*'
+      ui: workspace:*
+      zod: '*'
+    dependencies:
+      '@hookform/resolvers': 3.1.1_react-hook-form@7.45.0
+      '@radix-ui/react-accordion': 1.1.2_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-dialog': 1.0.4_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-label': 2.0.2_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-select': 1.2.2_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-slot': 1.0.2_i73ekzlbntu7jol6ph2fvy4mga
+      '@radix-ui/react-switch': 1.0.3_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-tabs': 1.0.4_hrrtw4it2dqo6rzcqzvl36ff7i
+      '@radix-ui/react-toast': 1.1.4_hrrtw4it2dqo6rzcqzvl36ff7i
+      lib: link:../../packages/lib
+      lucide-react: 0.244.0_react@18.2.0
+      next: 13.4.7_biqbaboplfbrettd7655fr4n2y
+      next-intl: 3.0.0-beta.4_next@13.4.7+react@18.2.0
+      next-themes: 0.2.1_5v7kwk6wz2hvmegftnptprfjvm
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-hook-form: 7.45.0_react@18.2.0
+      sharp: 0.31.3
+      slate: 0.94.1
+      tailwind-merge: 1.13.2
+      tailwindcss-animate: 1.0.6_tailwindcss@3.3.2
+      ui: link:../../packages/ui
+      zod: 3.21.4
+    devDependencies:
+      '@types/node': 20.3.1
+      '@types/react': 18.2.14
+      '@types/react-dom': 18.2.6
+      accept-language: 3.0.18
+      autoprefixer: 10.4.14_postcss@8.4.24
+      class-variance-authority: 0.6.0_typescript@5.1.3
+      clsx: 1.2.1
+      escape-html: 1.0.3
+      eslint-config-custom: link:../../packages/eslint-config-custom
+      postcss: 8.4.24
+      tailwindcss: 3.3.2
+      tsconfig: link:../../packages/tsconfig
+      typescript: 5.1.3
+
+  apps/vermeer:
     specifiers:
       '@hookform/resolvers': '*'
       '@radix-ui/react-accordion': '*'
@@ -341,6 +499,19 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
+
+  /@emotion/is-prop-valid/0.8.8:
+    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
+    requiresBuild: true
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    dev: false
+    optional: true
+
+  /@emotion/memoize/0.7.4:
+    resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    dev: false
+    optional: true
 
   /@eslint-community/eslint-utils/4.4.0_eslint@8.43.0:
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -2910,6 +3081,24 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
+  /framer-motion/10.12.18_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-cfhiUpPbj+0eEWKjuD+5cz5cMqH71xOtMxGiS/cSGfHn2OlHIEAqFnFyzEMENw5PxWR9bMVhatzzpD6lexmHZQ==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tslib: 2.5.3
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: false
+
   /fs-constants/1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
     dev: false
@@ -4925,65 +5114,65 @@ packages:
       safe-buffer: 5.2.1
     dev: false
 
-  /turbo-darwin-64/1.10.6:
-    resolution: {integrity: sha512-s2Gc7i9Ud+H9GDcrGJjPIyscJfzDGQ6il4Sl2snfvwngJs4/TaqKuBoX3HNt/7F4NiFRs7ZhlLV1/Yu9zGBRhw==}
+  /turbo-darwin-64/1.10.7:
+    resolution: {integrity: sha512-N2MNuhwrl6g7vGuz4y3fFG2aR1oCs0UZ5HKl8KSTn/VC2y2YIuLGedQ3OVbo0TfEvygAlF3QGAAKKtOCmGPNKA==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64/1.10.6:
-    resolution: {integrity: sha512-tgl70t5PBLyRcNTdP9N6NjvdvQ5LUk8Z60JGUhBhnc+oCOdA4pltrDJNPyel3tQAXXt1dDpl8pp9vUrbwoVyGg==}
+  /turbo-darwin-arm64/1.10.7:
+    resolution: {integrity: sha512-WbJkvjU+6qkngp7K4EsswOriO3xrNQag7YEGRtfLoDdMTk4O4QTeU6sfg2dKfDsBpTidTvEDwgIYJhYVGzrz9Q==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64/1.10.6:
-    resolution: {integrity: sha512-h7eyAA3xtAVpamcYJYUwe0xm0LWdbv7/I7QiM09AZ67TTNpyUgqW8giFN3h793BHEQ2Rcnk9FNkpIbjWBbyamg==}
+  /turbo-linux-64/1.10.7:
+    resolution: {integrity: sha512-x1CF2CDP1pDz/J8/B2T0hnmmOQI2+y11JGIzNP0KtwxDM7rmeg3DDTtDM/9PwGqfPotN9iVGgMiMvBuMFbsLhg==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64/1.10.6:
-    resolution: {integrity: sha512-8cZhOeLqu3QZ27yLd6bw4FNaB8y5pLdWeRLJeiWHkIb/cptKnRKJFP+keBJzJi8ovaMqdBpabrxiBRN2lhau5Q==}
+  /turbo-linux-arm64/1.10.7:
+    resolution: {integrity: sha512-JtnBmaBSYbs7peJPkXzXxsRGSGBmBEIb6/kC8RRmyvPAMyqF8wIex0pttsI+9plghREiGPtRWv/lfQEPRlXnNQ==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64/1.10.6:
-    resolution: {integrity: sha512-qx5jcfCJodN1Mh0KtSVQau7pK8CxDvtif7+joPHI2HbQPAADgdUl0LHfA5tFHh6aWgfvhxbvIXqJd6v7Mqkj9g==}
+  /turbo-windows-64/1.10.7:
+    resolution: {integrity: sha512-7A/4CByoHdolWS8dg3DPm99owfu1aY/W0V0+KxFd0o2JQMTQtoBgIMSvZesXaWM57z3OLsietFivDLQPuzE75w==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64/1.10.6:
-    resolution: {integrity: sha512-vTQaRG3/s2XTreOBr6J9HKFtjzusvwGQg0GtuW2+9Z7fizdzP8MuhaDbN6FhKHcWC81PQPD61TBIKTVTsYOEZg==}
+  /turbo-windows-arm64/1.10.7:
+    resolution: {integrity: sha512-D36K/3b6+hqm9IBAymnuVgyePktwQ+F0lSXr2B9JfAdFPBktSqGmp50JNC7pahxhnuCLj0Vdpe9RqfnJw5zATA==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo/1.10.6:
-    resolution: {integrity: sha512-0/wbjw4HvmPP1abVWHTdeFRfCA9cn5oxCPP5bDixagLzvDgGWE3xfdlsyGmq779Ekr9vjtDPgC2Y4JlXEhyryw==}
+  /turbo/1.10.7:
+    resolution: {integrity: sha512-xm0MPM28TWx1e6TNC3wokfE5eaDqlfi0G24kmeHupDUZt5Wd0OzHFENEHMPqEaNKJ0I+AMObL6nbSZonZBV2HA==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.10.6
-      turbo-darwin-arm64: 1.10.6
-      turbo-linux-64: 1.10.6
-      turbo-linux-arm64: 1.10.6
-      turbo-windows-64: 1.10.6
-      turbo-windows-arm64: 1.10.6
+      turbo-darwin-64: 1.10.7
+      turbo-darwin-arm64: 1.10.7
+      turbo-linux-64: 1.10.7
+      turbo-linux-arm64: 1.10.7
+      turbo-windows-64: 1.10.7
+      turbo-windows-arm64: 1.10.7
     dev: true
 
   /type-check/0.4.0:

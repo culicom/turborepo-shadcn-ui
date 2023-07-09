@@ -7,67 +7,71 @@ import { Loader2 } from "lucide-react";
 import { Scores } from "./circular-progress-bar";
 import { Code } from "ui/typography";
 
-function setUpQuery(key) {
-  const api = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed";
-  const parameters = {
-    url: encodeURIComponent("https://developers.google.com"),
-  };
-  let query = `${api}?`;
-  for (let key in parameters) {
-    query += `${key}=${parameters[key]}`;
-  }
-  return `${query}&key=${key}&category=performance&category=seo&category=best_practices&category=pwa&category=accessibility`;
-}
+async function getLighthouseScores() {
+  const res = await fetch("http://localhost:3000/features/api");
+  const data = res.json();
 
-async function getLighthouseScores(key: string) {
-  const url = setUpQuery(key);
-  console.log(url);
-  const data = await fetch(url)
-    .then((response) => {
-      // 1. check response.ok
-      if (response.ok) {
-        return response.json();
+  const post = fetch("http://culicom.amsterdam:3001/api/send", {
+    method: "POST",
+    body: JSON.stringify({
+      payload: {
+        hostname: "your-hostname",
+        language: "en-US",
+        referrer: "",
+        screen: "1920x1080",
+        title: "dashboard",
+        url: "/",
+        website: "39aa1be2-2c1f-4e48-8c4d-74484ce92e50",
+        name: "lighthouse",
+        data: {
+          foo: "bar",
+        },
+      },
+      type: "event",
+    }),
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
       }
-      return Promise.reject(response); // 2. reject instead of throw
+
+      throw new Error("No post");
     })
-    .catch((error) => {
-      console.log(error);
-      return score;
-    });
+    .catch((e) => console.log(e));
 
   return data;
 }
 
-export function Lighthouse({ pageSpeedKey }) {
+export function Lighthouse() {
   const [completedFetching, setCompletedFetching] = useState(null);
   const [data, setData] = useState(null);
 
   const startFetching = useCallback(async () => {
     setCompletedFetching(false);
-    const res = await getLighthouseScores(pageSpeedKey);
+    const { data } = await getLighthouseScores();
 
-    setTimeout(() => {
-      setCompletedFetching(true);
-      setData(res);
-    }, 500);
+    setCompletedFetching(true);
+    setData(data);
   }, []);
 
   return (
-    <div className="flex flex-col w-full h-full items-stretch justify-between">
+    <div className="flex  flex-col w-full h-full lg:h-full items-stretch justify-between">
       {data && completedFetching !== false ? (
         <Scores data={data} />
       ) : (
-        <div className="h-48" />
+        <Scores data={score} />
       )}
       <div className="flex items-center space-x-2 self-end">
         <span className="text-xs">
-          Laatste berekend op: <Code>{score?.analysisUTCTimestamp}</Code>
+          Berekend op: <Code>{score?.analysisUTCTimestamp}</Code>
         </span>
         <Button onClick={startFetching} disabled={completedFetching === false}>
           {completedFetching === false ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           ) : null}
-          Bereken
+          {completedFetching === false
+            ? "Bezig met ophalen"
+            : "Haal lighthouse scores op"}
         </Button>
       </div>
     </div>

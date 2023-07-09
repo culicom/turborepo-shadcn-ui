@@ -18,9 +18,9 @@ export function Hero(props: Props) {
         <H1 className="md:pb-4">{props?.title}</H1>
         <P className="text-lg text-muted-foreground">{props?.payline}</P>
       </div>
-      <Link href="/" className={buttonVariants({ variant: "action" })}>
-        Lees meer
-      </Link>
+      <a href="#contact" className={buttonVariants({ variant: "action" })}>
+        Neem contact op
+      </a>
     </section>
   );
 }

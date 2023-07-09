@@ -1,6 +1,3 @@
-import { PropsWithChildren } from "react";
-
-import clsx from "clsx";
 import { useTranslations } from "next-intl";
 
 import { Button } from "ui";
@@ -12,10 +9,8 @@ import { Cookies } from "./cookies";
 import { I18n } from "./i18n";
 import { Lighthouse } from "./lighthouse";
 import { Analytics } from "./analytics";
-
-function Mockup({ children }: PropsWithChildren) {
-  return <div className="rounded bg-muted border">{children}</div>;
-}
+import { Mockup } from "./mockup";
+import Link from "next/link";
 
 export default function Page() {
   const t = useTranslations("features");
@@ -28,39 +23,35 @@ export default function Page() {
         payline={t("hero.payline")}
       />
 
-      <div className="my-16 md:my-32">
-        {/* First */}
-        <section className="grid grid-cols-1 py-8 md:grid-cols-2 my-16">
-          <div className="mb-4 flex flex-col justify-center space-y-4 md:mb-0 md:mr-8">
-            <H2 className={clsx("lg:after:content-['_→']")}>
-              Geen vervelende cookiebanner
-            </H2>
-            <summary className="list-none">
-              Kobalt verwerkt geen privacygevoelige informatie voor haar
+      <div className="lg:space-y-32 my-16 md:my-32">
+        <Mockup
+          title="Geen vervelende cookiebanner"
+          summary="Kobalt verwerkt geen privacygevoelige informatie voor haar
               analytics. Hiermee voldoet Kobalt aan GDPR en gebruiken wij geen
               cookiebanner (die overigens door andere bedrijfen [Link](onjuist)
-              gebruikt wordt.)
-            </summary>
-          </div>
+              gebruikt wordt.)"
+        >
+          <Cookies />
+        </Mockup>
 
-          <Mockup>
-            <div className="flex justify-center p-2 pt-32">
-              <Cookies />
-            </div>
-          </Mockup>
-        </section>
-
-        {/* Second */}
-        <section className="grid grid-cols-1 py-8 md:grid-cols-2 my-16">
-          <div className="mb-4 flex flex-col  justify-center space-y-4 md:order-2  md:mb-0 md:ml-8">
-            <H2 className={clsx("lg:before:content-['←_']")}>
-              Perfecte Lighthouse scores door Google
-            </H2>
-            <summary className="list-none">
+        <Mockup
+          title="Perfecte Lighthouse scores door Google"
+          summary={
+            <>
               Kobalt kent het geheim van Google. Google hecht veel waarde aan
               hun Lighthouse scores. Daarom is elke website van Kobalt hiervoor
-              geoptimaliseerd. Test zelf maar:{" "}
-              <Button asChild variant="link" className="inline p-0">
+              geoptimaliseerd. Op onze blog lees je hoe wij elke website laten
+              testen door onze{" "}
+              <Button asChild variant="inline" className="p-0">
+                <Link href="/posts/blog/technisch/de-kracht-van-google's-lighthouse-voor-seo-optimalisatie">
+                  eigen Lighthouse integratie
+                </Link>
+              </Button>
+              . <span className="hidden lg:inline">Hiernaast</span>
+              <span className="inline lg:hidden">Hieronder</span> kun je ook
+              onze eigen Lighthouse score zien, en zelf opnieuw ophalen. Test
+              ook je eigen website bij{" "}
+              <Button asChild variant="inline" className="p-0">
                 <a
                   target="_blank"
                   href="https://pagespeed.web.dev/"
@@ -68,69 +59,61 @@ export default function Page() {
                 >
                   Lighthouse
                 </a>
-              </Button>
-            </summary>
-          </div>
-
-          <Mockup>
-            <div className="flex flex-wrap justify-center  px-2 py-2">
-              <Lighthouse pageSpeedKey={process.env.PAGE_SPEED_KEY} />
-            </div>
-          </Mockup>
-        </section>
-
-        {/* Third */}
-        <section
-          id="translations"
-          className="grid grid-cols-1 py-8 md:grid-cols-2 my-16"
+              </Button>{" "}
+              zelf.
+            </>
+          }
         >
-          <div className="mb-4 flex flex-col justify-center space-y-4 md:mb-0 md:mr-8">
-            <H2 className={clsx("lg:after:content-['_→']")}>Dark mode</H2>
-            <summary className="list-none">
+          <Lighthouse />
+        </Mockup>
+
+        <Mockup
+          title="Dark mode"
+          summary={
+            <>
               Kobalt laat websites aansluiten op het publiek. Voor een website
-              van een club of bar is een darkmode bijvoorbeeld cruciaal.
-            </summary>
-          </div>
+              van een club of bar is een darkmode bijvoorbeeld cruciaal. Lees op
+              onze blog verder waarom{" "}
+              <Button asChild variant="inline" className="p-0">
+                <Link href="/posts/blog/technisch/dark-mode">Dark mode</Link>
+              </Button>{" "}
+              ook voor jou belangrijk kan zijn.
+            </>
+          }
+        >
+          <DarkmodeSwitch />
+        </Mockup>
 
-          <Mockup>
-            <div className="flex flex-wrap justify-center px-2 h-36 py-2 md:space-x-4">
-              <DarkmodeSwitch />
-            </div>
-          </Mockup>
-        </section>
-
-        {/* Fourth */}
-        <section className="grid grid-cols-1 py-8 md:grid-cols-2 my-16">
-          <div className="mb-4 flex flex-col  justify-center space-y-4 md:order-2  md:mb-0 md:ml-8">
-            <H2 className={clsx("lg:before:content-['←_']")}>
+        <Mockup
+          title={
+            <>
               Vergroot je bereik met slimme vertalingen <Code>(i18n)</Code>.
-            </H2>
-            <summary className="list-none">
+            </>
+          }
+          summary={
+            <>
               Door teksten automatisch te laten vertalen kun je meer potentiele
-              bezoekers bereiken.
-            </summary>
-          </div>
+              bezoekers bereiken. Op onze blog leggen we precies uit hoe we het
+              doen, en waarom{" "}
+              <Button asChild variant="link" className="inline p-0">
+                <Link href="/posts/blog/technisch/hoe-kobalt-het-web-vertaalt">
+                  Slimme vertalingen
+                </Link>
+              </Button>{" "}
+              voor jou interessant zijn.
+            </>
+          }
+        >
+          <I18n />
+        </Mockup>
 
-          <Mockup>
-            <div className="flex flex-col items-center h-full justify-center px-2 py-2">
-              <I18n />
-            </div>
-          </Mockup>
-        </section>
-
-        {/* Fifth */}
-        <section className="grid grid-cols-1 py-8 md:grid-cols-2 my-16">
-          <div className="mb-4 flex flex-col  justify-center space-y-4 md:order-2  md:mb-0 md:ml-8">
-            <H2 className={clsx("lg:before:content-['←_']")}>Analytics</H2>
-            <summary className="list-none">...</summary>
-          </div>
-
-          <Mockup>
-            <div className="flex flex-col items-center h-full justify-center px-2 py-2">
-              <Analytics />
-            </div>
-          </Mockup>
-        </section>
+        <Mockup
+          title="Realtime analytics"
+          summary="Door teksten automatisch te laten vertalen kun je meer potentiele
+          bezoekers bereiken."
+        >
+          <Analytics />
+        </Mockup>
       </div>
     </div>
   );

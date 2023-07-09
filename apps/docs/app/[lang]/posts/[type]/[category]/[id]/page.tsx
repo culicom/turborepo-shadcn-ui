@@ -6,6 +6,8 @@ import { cn } from "lib";
 
 import { Renderer } from "../../../../../../components/renderer";
 import { H1 } from "ui/typography/h1";
+import { badges } from "../../../../../../lib/colors";
+import { notFound } from "next/navigation";
 
 type QueryType = {
   id: string;
@@ -32,16 +34,14 @@ export default async function Page(props: any) {
 
   const doc = data?.docs[0];
 
-  return (
-    <article className="mx-auto max-w-3xl py-8 ">
-      <div className="my-4 flex flex-col justify-center">
-        <Badge className="rounded-sm md:mx-auto w-fit mb-4">
-          <Link href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}`}>
-            {doc?.category[0]?.name}
-          </Link>
-        </Badge>
+  if (!doc) {
+    return notFound();
+  }
 
-        <H1 className="pb-8 md:text-center">{doc?.title}</H1>
+  return (
+    <article className="mx-auto max-w-3xl pb-8 ">
+      <div className="mb-4 flex flex-col justify-center">
+        <H1 className="pb-8 pt-0 md:text-center">{doc?.title}</H1>
 
         <Image
           priority
@@ -62,3 +62,5 @@ export default async function Page(props: any) {
     </article>
   );
 }
+
+export const revalidate = 60;

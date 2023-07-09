@@ -34,7 +34,7 @@ export default async function Page() {
   return (
     <div>
       <Hero
-        tag="KOBALTS DIENSTEN"
+        tag="SERVICE"
         title="Zie wat Kobalt voor uw bedrijf kan betekenen"
         payline="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec
             lacus nec urna imperdiet venenatis in at magna. Nulla ultrices

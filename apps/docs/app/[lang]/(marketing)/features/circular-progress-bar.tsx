@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import score from "./score.json";
 
 type CircularProps = {
   sqSize: number;
@@ -79,7 +80,7 @@ export function CircularProgressBar(props: CircularProps) {
 
 export function Scores({ data }: any) {
   return (
-    <span className="my-16 flex flex-wrap justify-center self-center">
+    <span className="mb-16 pt-24 flex flex-wrap justify-center self-center">
       {Object.keys(data?.lighthouseResult?.categories).map((category) => (
         <label
           key={category}

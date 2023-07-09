@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Hero } from "../../../components/blocks/Hero";
 
 export default function Error({ error, reset }: any) {
   React.useEffect(() => {
@@ -8,10 +9,14 @@ export default function Error({ error, reset }: any) {
   }, [error]);
 
   return (
-    <div className="space-y-4">
-      <div className="text-sm text-vercel-pink">
-        <strong className="font-bold">Error:</strong> {error?.message}
-      </div>
+    <div>
+      <Hero
+        tag="SERVICE"
+        title="Zie wat Kobalt voor uw bedrijf kan betekenen"
+        payline="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec
+            lacus nec urna imperdiet venenatis in at magna. Nulla ultrices
+            semper dui, at maximus risus ultrices id."
+      />
     </div>
   );
 }

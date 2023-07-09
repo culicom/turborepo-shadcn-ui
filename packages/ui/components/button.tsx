@@ -19,6 +19,8 @@ const buttonVariants = cva(
         action: "bg-action text-white hover:bg-action/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "underline-offset-4 hover:underline",
+        inline:
+          "underline-offset-4 inline decoration-gray-500 hover:decoration-inherit underline",
       },
       size: {
         default: "h-10 py-2 px-4",

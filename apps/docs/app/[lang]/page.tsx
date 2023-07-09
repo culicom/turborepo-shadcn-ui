@@ -18,7 +18,7 @@ export default async function IndexPage(props: any) {
       <PostBlock
         locale="nl"
         token={"null"}
-        type={{ value: { name: "work", id: "63e29b7245a339dda4a0179a" } }}
+        type={{ value: { name: "showcase", id: "63e29b7245a339dda4a0179a" } }}
       />
 
       <AboutBlock />

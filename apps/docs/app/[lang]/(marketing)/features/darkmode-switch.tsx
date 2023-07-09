@@ -11,16 +11,26 @@ export function DarkmodeSwitch() {
   const { setTheme, theme } = useTheme();
 
   return (
-    <div className="flex flex-col w-full h-full items-stretch justify-between">
+    <div className="flex h-64 lg:h-full flex-col w-full items-between justify-between">
       <div />
-      <P className="text-xl justify-center flex text-center">
-        <SunMedium className="dark:hidden" />
-        <Moon className="hidden dark:flex" />
+      <P className="text-3xl justify-center text-gray-500 flex text-center">
+        <SunMedium className="h-12 w-12 dark:hidden" />
+        <Moon className="hidden h-12 w-12 dark:flex" />
       </P>
 
       <div className="flex items-center space-x-2 self-end">
-        <Button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-          Toggle
+        <Button
+          className="dark:hidden"
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        >
+          Darkmode aan
+        </Button>
+        <Button
+          data-umami-event="darkmode"
+          className="dark:block hidden"
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        >
+          Darkmode uit
         </Button>
       </div>
     </div>

@@ -10,6 +10,7 @@ import { P } from "ui/typography/p";
 import { Button, Label } from "ui";
 import { Logo } from "../components/logo";
 import Link from "next/link";
+import { slugify } from "ui/lib/utils";
 
 const events = [
   {
@@ -376,7 +377,9 @@ export default function Home() {
                   <H2>{event?.title}</H2>
                   <P>{event?.description}</P>
                   <Button asChild className="my-4">
-                    <Link href={"#"}>Learn More</Link>
+                    <Link href={`/event/${slugify(event?.title)}`}>
+                      Schrijf je in
+                    </Link>
                   </Button>
                 </div>
               </div>

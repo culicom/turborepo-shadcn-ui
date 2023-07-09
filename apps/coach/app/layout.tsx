@@ -14,6 +14,7 @@ import { Logo } from "../components/logo";
 import Link from "next/link";
 import { H2 } from "ui/typography/h2";
 import { P } from "ui/typography/p";
+import { cn } from "lib";
 
 export const metadata = {
   title: "Create Next App",
@@ -27,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn(inter.className, "bg-slate-50")}>
         <header className="text-gray-600 body-font">
           <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
             <Link href="/">
@@ -81,7 +82,7 @@ export default function RootLayout({
                   <P className="leading-relaxed mb-6">
                     FoodFit Online heeft mijn leven veranderd! Ik had altijd
                     moeite met het maken van gezonde voedingskeuzes en worstelde
-                    met mijn gewicht. Dankzij Maarten's begeleiding en het
+                    met mijn gewicht. Dankzij Maartens begeleiding en het
                     interactieve programma heb ik niet alleen mijn doelen
                     bereikt, maar ook mijn eetgewoonten volledig
                     getransformeerd. Ik voel me energieker, gezonder en
@@ -141,15 +142,16 @@ export default function RootLayout({
             <div className="container px-5 py-8 flex flex-wrap mx-auto items-center">
               <div className="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start">
                 <div className="relative sm:w-64 w-40 sm:mr-4 mr-2">
-                  <Label>Placeholder</Label>
+                  <Label>Schrijf je in voor mijn nieuwsbrief</Label>
                   <Input
                     type="text"
                     id="footer-field"
+                    placeholder="email"
                     name="footer-field"
                     className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:bg-transparent focus:ring-blue-200 focus:border-blue-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
-                <Button>Button</Button>
+                <Button>Verstuur</Button>
               </div>
               <span className="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
                 <a className="text-gray-500">

@@ -10,11 +10,12 @@ import { Renderer } from "../renderer";
 import { H2 } from "ui/typography/h2";
 import { H4 } from "ui/typography/h4";
 import { P } from "ui/typography/p";
+import { H3 } from "ui/typography";
 
 const data = [
   {
     title: "Zelf te beheren",
-    icon: <Combine className=" w-16 h-16 text-blue-950" />,
+    icon: <Combine className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
         children: [
@@ -28,7 +29,7 @@ const data = [
   },
   {
     title: "Functionele websites",
-    icon: <Boxes className=" w-16 h-16 text-blue-950" />,
+    icon: <Boxes className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
         children: [
@@ -42,7 +43,7 @@ const data = [
   },
   {
     title: "Professioneel webdesign",
-    icon: <PaintBucket className=" w-16 h-16 text-blue-950" />,
+    icon: <PaintBucket className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
         children: [
@@ -56,7 +57,7 @@ const data = [
   },
   {
     title: "SEO",
-    icon: <Search className=" w-16 h-16 text-blue-950" />,
+    icon: <Search className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
         children: [
@@ -70,7 +71,7 @@ const data = [
   },
   {
     title: "Vertaling",
-    icon: <Languages className=" w-16 h-16 text-blue-950" />,
+    icon: <Languages className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
         children: [
@@ -84,7 +85,7 @@ const data = [
   },
   {
     title: "Software as a Service",
-    icon: <AppWindow className=" w-16 h-16 text-blue-950" />,
+    icon: <AppWindow className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
         children: [
@@ -102,16 +103,17 @@ export function AboutBlock() {
   return (
     <div className="my-16 md:my-32">
       <article className="mx-auto max-w-3xl md:text-center">
-        <H4>Over Kobalt</H4>
+        <H4>Onze websites</H4>
 
-        <H2 className="mt-0 border-none">Kobalt.</H2>
+        <H2 className="dark:text-white text-blue-950 mt-0 border-none">
+          Kobalt.
+        </H2>
 
         <P className="text-lg text-muted-foreground">
-          Kobalt biedt (startende) ondernemers de mogelijkheid om op een
-          laagdrempelige en voorspelbare manier hun dienst, merk of product
-          online zichtbaar en vindbaar te maken. Dit doet Kobalt door moderne en
-          op maat gemaakte websites aan te bieden voor een vast bedrag per
-          maand.
+          Kobalt helpt (startende) ondernemers aan een professionele website
+          zonder zorgen. Dit doet Kobalt door moderne en op maat gemaakte
+          websites aan te bieden voor een vast bedrag per maand. Aantrekkelijker
+          krijg je het niet.
         </P>
       </article>
 
@@ -122,9 +124,9 @@ export function AboutBlock() {
               <div className="mb-9 flex justify-center text-center">
                 {item?.icon}
               </div>
-              <h3 className="mt-8 scroll-m-20 text-center text-2xl text-blue-700 font-semibold tracking-tight">
+              <H3 className="mt-8 text-center text-blue-700 font-semibold tracking-tight">
                 {item?.title}
-              </h3>
+              </H3>
 
               <Renderer content={item.richText} />
             </div>

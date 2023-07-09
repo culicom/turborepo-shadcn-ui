@@ -45,12 +45,12 @@ export async function Footer() {
         <div className="container mx-auto py-8 text-white sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
-              <div className="flex sm:justify-start">
+              <div className="dark flex sm:justify-start">
                 <Link
                   href="/"
                   className="group z-20 flex items-center space-x-2.5 text-white"
                 >
-                  <Logo text="white" />
+                  <Logo />
                 </Link>
               </div>
 
@@ -59,7 +59,7 @@ export async function Footer() {
                   <li>
                     <Button variant="link" asChild className="pl-0 text-white">
                       <Link href="mailto:contact@culicom.amsterdam">
-                        <Icons.mail className="mr-2 w-4" />
+                        <Icons.mail className="mr-4 w-5" />
                         contact@culicom.amsterdam
                       </Link>
                     </Button>
@@ -67,14 +67,14 @@ export async function Footer() {
 
                   <li>
                     <Button variant="link" className="pl-0 text-white">
-                      <Icons.phone className="mr-2 w-4" />
+                      <Icons.phone className="mr-4 w-5" />
                       0612345678
                     </Button>
                   </li>
 
                   <li>
                     <Button variant="link" className="pl-0 text-white">
-                      <Icons.pin className="mr-2 w-4" />
+                      <Icons.pin className="mr-4 w-5" />
                       <address className="pl-0 text-left not-italic">
                         Develstein 544, Amsterdam Zuidoost
                       </address>

@@ -7254,62 +7254,6 @@
             "weight": 0
           }
         ]
-      },
-      "pwa": {
-        "id": "pwa",
-        "title": "PWA",
-        "description": "These checks validate the aspects of a Progressive Web App. [Learn what makes a good Progressive Web App](https://web.dev/pwa-checklist/).",
-        "score": 0.88,
-        "manualDescription": "These checks are required by the baseline [PWA Checklist](https://web.dev/pwa-checklist/) but are not automatically checked by Lighthouse. They do not affect your score but it's important that you verify them manually.",
-        "auditRefs": [
-          {
-            "id": "installable-manifest",
-            "weight": 2,
-            "group": "pwa-installable"
-          },
-          {
-            "id": "service-worker",
-            "weight": 1,
-            "group": "pwa-optimized"
-          },
-          {
-            "id": "splash-screen",
-            "weight": 1,
-            "group": "pwa-optimized"
-          },
-          {
-            "id": "themed-omnibox",
-            "weight": 1,
-            "group": "pwa-optimized"
-          },
-          {
-            "id": "content-width",
-            "weight": 0,
-            "group": "pwa-optimized"
-          },
-          {
-            "id": "viewport",
-            "weight": 2,
-            "group": "pwa-optimized"
-          },
-          {
-            "id": "maskable-icon",
-            "weight": 1,
-            "group": "pwa-optimized"
-          },
-          {
-            "id": "pwa-cross-browser",
-            "weight": 0
-          },
-          {
-            "id": "pwa-page-transitions",
-            "weight": 0
-          },
-          {
-            "id": "pwa-each-page-has-url",
-            "weight": 0
-          }
-        ]
       }
     },
     "categoryGroups": {

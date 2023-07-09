@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Voedingsmythes Ontkracht",
+    "slug": "voedingsmythes-ontkracht",
+    "date": "10 juli 2023",
+    "category": "Food",
+    "img": "https://images.unsplash.com/photo-1463740839922-2d3b7e426a56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1850&q=80",
+    "description": "Tijdens dit evenement zal voedingscoach Maarten de meest voorkomende voedingsmythes en misvattingen bespreken. Leer de waarheid achter populaire voedingsclaims en krijg wetenschappelijk onderbouwde informatie om gezonde keuzes te maken."
+  },
+  {
+    "title": "Meal Prep Masterclass",
+    "slug": "meal-prep-masterclass",
+    "date": "25 augustus 2023",
+    "category": "Food",
+    "img": "https://images.unsplash.com/photo-1606859191214-25806e8e2423?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1435&q=80",
+    "description": "Leer hoe je efficiënt en effectief maaltijden kunt voorbereiden tijdens deze praktische masterclass. Maarten deelt handige tips, recepten en strategieën om maaltijdplanning en meal prepping in je dagelijkse routine op te nemen, zodat je altijd gezonde opties bij de hand hebt."
+  },
+  {
+    "title": "Eet je Fit: Sportvoeding 101",
+    "slug": "eet-je-fit-sportvoeding-101",
+    "date": "12 september 2023",
+    "category": "Food",
+    "img": "https://images.unsplash.com/photo-1617054175880-d1e4fa753bd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    "description": "Ontdek hoe je je prestaties in de sportschool naar een hoger niveau kunt tillen door middel van de juiste voeding. Tijdens dit evenement leer je welke voedingsstoffen essentieel zijn voor sportieve prestaties, hoe je je energie kunt optimaliseren en welke maaltijden en snacks het beste zijn voor herstel en spieropbouw."
+  }
+]

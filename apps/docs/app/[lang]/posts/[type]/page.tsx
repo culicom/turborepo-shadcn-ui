@@ -34,3 +34,5 @@ export default async function Page(props: any) {
 
   return <Posts docs={data?.docs} />;
 }
+
+export const revalidate = 60;

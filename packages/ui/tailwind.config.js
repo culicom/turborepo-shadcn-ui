@@ -66,6 +66,9 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
+      boxShadow: {
+        mockup: "1.4em 0, 2.8em 0, 4.2em 0",
+      },
       keyframes: {
         flicker: {
           // from: { height: 0 },
