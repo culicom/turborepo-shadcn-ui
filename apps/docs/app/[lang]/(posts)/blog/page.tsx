@@ -1,14 +1,13 @@
 import { Posts } from "../Posts";
+import { Title } from "../Title";
 
 type QueryType = {
-  type: string;
   locale: string;
   sort: string;
 };
 
 async function getPosts(props: QueryType) {
-  const filters = `&where[type.slug][equals]=${props?.type}`;
-  // const sorting = props?.sort ? `?sort=${props?.sort}` : ""
+  const filters = `&where[type.slug][equals]=blog`;
 
   const data = await fetch(
     `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${props?.locale}${filters}`,
@@ -26,13 +25,21 @@ async function getPosts(props: QueryType) {
 export default async function Page(props: any) {
   const data = await getPosts({
     locale: "nl",
-    type: props?.params?.type,
     sort: "desc",
   });
 
   if (!data.docs) return null;
 
-  return <Posts docs={data?.docs} />;
+  return (
+    <>
+      <Title
+        type="blog"
+        title="Het laatste nieuws"
+        description="Ben je benieuwd naar de kennis die schuilgaat achter onze ideeën? Lees dan onze blogposts."
+      />
+      <Posts docs={data?.docs} />
+    </>
+  );
 }
 
 export const revalidate = 60;

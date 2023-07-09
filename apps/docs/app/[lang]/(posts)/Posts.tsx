@@ -13,9 +13,7 @@ export async function Posts({ docs }: any) {
       {docs?.map((doc: any) => (
         <Card className="bg-transparant border-0 shadow-none" key={doc?.id}>
           <CardHeader className="p-0">
-            <Link
-              href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}/${doc?.slug}`}
-            >
+            <Link href={`/${doc?.type?.slug}/${doc?.slug}`}>
               <Image
                 alt={doc?.featured?.filename}
                 src={doc?.featured?.url}

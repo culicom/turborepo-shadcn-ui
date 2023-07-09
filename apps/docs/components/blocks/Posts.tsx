@@ -84,9 +84,7 @@ export async function PostBlock({
         {data?.docs?.map((doc: any) => (
           <Card className="bg-transparant border-0 shadow-none" key={doc?.id}>
             <CardHeader className="p-0">
-              <Link
-                href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}/${doc?.slug}`}
-              >
+              <Link href={`/${doc?.type?.slug}/${doc?.slug}`}>
                 <Image
                   alt={doc?.featured?.filename}
                   src={doc?.featured?.url}
@@ -108,16 +106,12 @@ export async function PostBlock({
                     doc?.category[0]?.name === "mobile",
                 })}
               >
-                <Link
-                  href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}`}
-                >
+                <Link href={`/${doc?.type?.slug}`}>
                   {doc?.category[0]?.name}
                 </Link>
               </Badge>
               <H3 className="mt-0">
-                <Link
-                  href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}/${doc?.slug}`}
-                >
+                <Link href={`/${doc?.type?.slug}/${doc?.slug}`}>
                   {doc?.title}
                 </Link>
               </H3>
@@ -128,7 +122,7 @@ export async function PostBlock({
 
       <Link
         className="link mt-4 flex justify-end "
-        href={`/posts/${name === "blog" ? "blog" : "showcase"}`}
+        href={`/${name === "blog" ? "blog" : "showcase"}`}
       >
         {name === "showcase" ? "Zie meer werk" : "Ga naar blog"}→
       </Link>

@@ -15,11 +15,11 @@ export const siteConfig = {
     },
     {
       title: "Showcase",
-      href: "/posts/showcase",
+      href: "/showcase",
     },
     {
       title: "Blog",
-      href: "/posts/blog",
+      href: "/blog",
     },
   ],
 };
