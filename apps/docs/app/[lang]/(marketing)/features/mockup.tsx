@@ -1,5 +1,4 @@
 import { H2 } from "ui/typography";
-import { motion } from "framer-motion";
 
 type MockupProps = {
   children: React.ReactNode;
