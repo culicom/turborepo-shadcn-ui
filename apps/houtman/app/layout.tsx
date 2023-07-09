@@ -3,17 +3,12 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-import Image from "next/image";
-import mark from "./../public/mark.jpeg";
-import sarah from "./../public/sarah.jpeg";
+import { Phone } from "lucide-react";
 
-import { Facebook, Instagram, Linkedin, Phone, Twitter } from "lucide-react";
-
-import { Button, Input, Label } from "ui";
+import { Button } from "ui";
 import { Logo } from "../components/logo";
 import Link from "next/link";
-import { H2 } from "ui/typography/h2";
-import { P } from "ui/typography/p";
+
 import { cn } from "lib";
 
 export const metadata = {
