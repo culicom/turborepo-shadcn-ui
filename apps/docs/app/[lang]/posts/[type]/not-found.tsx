@@ -1,10 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
-import clsx from "clsx";
 import { Hero } from "../../../../components/blocks/Hero";
-
-// import { Header } from '@kobalt/ui/typography';
-// import { Section } from '@kobalt/ui/sections';
 
 export default function NotFound() {
   return (

@@ -5,7 +5,6 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children, ...props }: RootLayoutProps) {
-  console.log(props);
   return (
     <>
       <Title />

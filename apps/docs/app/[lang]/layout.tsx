@@ -51,6 +51,7 @@ export default function RootLayout({ children, params }: any) {
               <Adam />
               <ProfileForm />
             </div>
+
             <Footer />
 
             <TailwindIndicator />

@@ -37,7 +37,7 @@ const faq = [
   },
 ];
 
-export async function AccordionBlock() {
+export function AccordionBlock() {
   return (
     <div className="my-16 md:my-32 mx-auto max-w-4xl gap-2">
       <article className="prose mx-auto mb-12 text-center">

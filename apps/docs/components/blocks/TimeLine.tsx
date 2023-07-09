@@ -14,11 +14,7 @@ type TimeLineBlockType = {
   list: StepType[];
 };
 
-export async function TimeLineBlock({
-  title,
-  richText,
-  list,
-}: TimeLineBlockType) {
+export function TimeLineBlock({ title, richText, list }: TimeLineBlockType) {
   return (
     <section className="my-8">
       <div className="py-4 sm:px-6 lg:mx-16 lg:px-8 ">
