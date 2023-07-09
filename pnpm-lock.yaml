@@ -118,113 +118,116 @@ importers:
   apps/coach:
     dependencies:
       '@hookform/resolvers':
-        specifier: '*'
-        version: 3.1.1(react-hook-form@7.45.1)
+        specifier: ^3.1.1
+        version: 3.1.1(react-hook-form@7.45.0)
       '@radix-ui/react-accordion':
-        specifier: '*'
+        specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-dialog':
-        specifier: '*'
+        specifier: ^1.0.4
         version: 1.0.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-label':
-        specifier: '*'
+        specifier: ^2.0.2
         version: 2.0.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-select':
-        specifier: ^*
+        specifier: ^1.2.2
         version: 1.2.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-slot':
-        specifier: '*'
+        specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.14)(react@18.2.0)
       '@radix-ui/react-switch':
-        specifier: '*'
+        specifier: ^1.0.3
         version: 1.0.3(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-tabs':
-        specifier: '*'
+        specifier: 1.0.4
         version: 1.0.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-toast':
-        specifier: '*'
+        specifier: ^1.1.4
         version: 1.1.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       lib:
         specifier: workspace:*
         version: link:../../packages/lib
       lucide-react:
-        specifier: '*'
-        version: 0.259.0(react@18.2.0)
+        specifier: ^0.244.0
+        version: 0.244.0(react@18.2.0)
       next:
-        specifier: '*'
+        specifier: ^13.4.1
         version: 13.4.9(react-dom@18.2.0)(react@18.2.0)
-      next-intl:
-        specifier: 3.0.0-beta.4
-        version: 3.0.0-beta.4(next@13.4.9)(react@18.2.0)
       next-themes:
-        specifier: '*'
+        specifier: ^0.2.1
         version: 0.2.1(next@13.4.9)(react-dom@18.2.0)(react@18.2.0)
       react:
-        specifier: '*'
+        specifier: ^18.2.0
         version: 18.2.0
       react-dom:
-        specifier: '*'
+        specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       react-hook-form:
-        specifier: '*'
-        version: 7.45.1(react@18.2.0)
+        specifier: ^7.44.3
+        version: 7.45.0(react@18.2.0)
       sharp:
-        specifier: '*'
-        version: 0.32.1
+        specifier: ^0.31.3
+        version: 0.31.3
       slate:
-        specifier: '*'
+        specifier: ^0.94.1
         version: 0.94.1
       tailwind-merge:
-        specifier: '*'
+        specifier: ^1.12.0
         version: 1.13.2
       tailwindcss-animate:
-        specifier: '*'
+        specifier: ^1.0.5
         version: 1.0.6(tailwindcss@3.3.2)
       ui:
         specifier: workspace:*
         version: link:../../packages/ui
       zod:
-        specifier: '*'
+        specifier: ^3.21.4
         version: 3.21.4
     devDependencies:
+      '@turbo/gen':
+        specifier: ^1.9.7
+        version: 1.10.7(@types/node@17.0.45)(typescript@5.1.6)
       '@types/node':
-        specifier: '*'
-        version: 20.4.1
+        specifier: ^17.0.12
+        version: 17.0.45
       '@types/react':
-        specifier: '*'
+        specifier: ^18.0.22
         version: 18.2.14
       '@types/react-dom':
-        specifier: '*'
+        specifier: ^18.0.7
         version: 18.2.6
-      accept-language:
-        specifier: '*'
-        version: 3.0.18
       autoprefixer:
-        specifier: '*'
+        specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.25)
       class-variance-authority:
-        specifier: '*'
-        version: 0.6.1
+        specifier: ^0.4.0
+        version: 0.4.0(typescript@5.1.6)
       clsx:
-        specifier: '*'
+        specifier: ^1.2.1
         version: 1.2.1
       escape-html:
-        specifier: '*'
+        specifier: ^1.0.3
         version: 1.0.3
+      eslint:
+        specifier: ^7.32.0
+        version: 7.32.0
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
       postcss:
-        specifier: '*'
+        specifier: ^8.4.24
         version: 8.4.25
+      prettier:
+        specifier: ^2.5.1
+        version: 2.8.8
       tailwindcss:
-        specifier: '*'
+        specifier: ^3.3.2
         version: 3.3.2
       tsconfig:
         specifier: workspace:*
         version: link:../../packages/tsconfig
       typescript:
-        specifier: '*'
+        specifier: ^5.1.6
         version: 5.1.6
 
   apps/docs:
@@ -345,225 +348,231 @@ importers:
   apps/houtman:
     dependencies:
       '@hookform/resolvers':
-        specifier: '*'
-        version: 3.1.1(react-hook-form@7.45.1)
+        specifier: ^3.1.1
+        version: 3.1.1(react-hook-form@7.45.0)
       '@radix-ui/react-accordion':
-        specifier: '*'
+        specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-dialog':
-        specifier: '*'
+        specifier: ^1.0.4
         version: 1.0.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-label':
-        specifier: '*'
+        specifier: ^2.0.2
         version: 2.0.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-select':
-        specifier: ^*
+        specifier: ^1.2.2
         version: 1.2.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-slot':
-        specifier: '*'
+        specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.14)(react@18.2.0)
       '@radix-ui/react-switch':
-        specifier: '*'
+        specifier: ^1.0.3
         version: 1.0.3(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-tabs':
-        specifier: '*'
+        specifier: 1.0.4
         version: 1.0.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-toast':
-        specifier: '*'
+        specifier: ^1.1.4
         version: 1.1.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       lib:
         specifier: workspace:*
         version: link:../../packages/lib
       lucide-react:
-        specifier: '*'
-        version: 0.259.0(react@18.2.0)
+        specifier: ^0.244.0
+        version: 0.244.0(react@18.2.0)
       next:
-        specifier: '*'
+        specifier: ^13.4.1
         version: 13.4.9(react-dom@18.2.0)(react@18.2.0)
-      next-intl:
-        specifier: 3.0.0-beta.4
-        version: 3.0.0-beta.4(next@13.4.9)(react@18.2.0)
       next-themes:
-        specifier: '*'
+        specifier: ^0.2.1
         version: 0.2.1(next@13.4.9)(react-dom@18.2.0)(react@18.2.0)
       react:
-        specifier: '*'
+        specifier: ^18.2.0
         version: 18.2.0
       react-dom:
-        specifier: '*'
+        specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       react-hook-form:
-        specifier: '*'
-        version: 7.45.1(react@18.2.0)
+        specifier: ^7.44.3
+        version: 7.45.0(react@18.2.0)
       sharp:
-        specifier: '*'
-        version: 0.32.1
+        specifier: ^0.31.3
+        version: 0.31.3
       slate:
-        specifier: '*'
+        specifier: ^0.94.1
         version: 0.94.1
       tailwind-merge:
-        specifier: '*'
+        specifier: ^1.12.0
         version: 1.13.2
       tailwindcss-animate:
-        specifier: '*'
+        specifier: ^1.0.5
         version: 1.0.6(tailwindcss@3.3.2)
       ui:
         specifier: workspace:*
         version: link:../../packages/ui
       zod:
-        specifier: '*'
+        specifier: ^3.21.4
         version: 3.21.4
     devDependencies:
+      '@turbo/gen':
+        specifier: ^1.9.7
+        version: 1.10.7(@types/node@17.0.45)(typescript@5.1.6)
       '@types/node':
-        specifier: '*'
-        version: 20.4.1
+        specifier: ^17.0.12
+        version: 17.0.45
       '@types/react':
-        specifier: '*'
+        specifier: ^18.0.22
         version: 18.2.14
       '@types/react-dom':
-        specifier: '*'
+        specifier: ^18.0.7
         version: 18.2.6
-      accept-language:
-        specifier: '*'
-        version: 3.0.18
       autoprefixer:
-        specifier: '*'
+        specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.25)
       class-variance-authority:
-        specifier: '*'
-        version: 0.6.1
+        specifier: ^0.4.0
+        version: 0.4.0(typescript@5.1.6)
       clsx:
-        specifier: '*'
+        specifier: ^1.2.1
         version: 1.2.1
       escape-html:
-        specifier: '*'
+        specifier: ^1.0.3
         version: 1.0.3
+      eslint:
+        specifier: ^7.32.0
+        version: 7.32.0
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
       postcss:
-        specifier: '*'
+        specifier: ^8.4.24
         version: 8.4.25
+      prettier:
+        specifier: ^2.5.1
+        version: 2.8.8
       tailwindcss:
-        specifier: '*'
+        specifier: ^3.3.2
         version: 3.3.2
       tsconfig:
         specifier: workspace:*
         version: link:../../packages/tsconfig
       typescript:
-        specifier: '*'
+        specifier: ^5.1.6
         version: 5.1.6
 
   apps/vermeer:
     dependencies:
       '@hookform/resolvers':
-        specifier: '*'
-        version: 3.1.1(react-hook-form@7.45.1)
+        specifier: ^3.1.1
+        version: 3.1.1(react-hook-form@7.45.0)
       '@radix-ui/react-accordion':
-        specifier: '*'
+        specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-dialog':
-        specifier: '*'
+        specifier: ^1.0.4
         version: 1.0.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-label':
-        specifier: '*'
+        specifier: ^2.0.2
         version: 2.0.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-select':
-        specifier: ^*
+        specifier: ^1.2.2
         version: 1.2.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-slot':
-        specifier: '*'
+        specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.14)(react@18.2.0)
       '@radix-ui/react-switch':
-        specifier: '*'
+        specifier: ^1.0.3
         version: 1.0.3(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-tabs':
-        specifier: '*'
+        specifier: 1.0.4
         version: 1.0.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-toast':
-        specifier: '*'
+        specifier: ^1.1.4
         version: 1.1.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       lib:
         specifier: workspace:*
         version: link:../../packages/lib
       lucide-react:
-        specifier: '*'
-        version: 0.259.0(react@18.2.0)
+        specifier: ^0.244.0
+        version: 0.244.0(react@18.2.0)
       next:
-        specifier: '*'
+        specifier: ^13.4.1
         version: 13.4.9(react-dom@18.2.0)(react@18.2.0)
-      next-intl:
-        specifier: 3.0.0-beta.4
-        version: 3.0.0-beta.4(next@13.4.9)(react@18.2.0)
       next-themes:
-        specifier: '*'
+        specifier: ^0.2.1
         version: 0.2.1(next@13.4.9)(react-dom@18.2.0)(react@18.2.0)
       react:
-        specifier: '*'
+        specifier: ^18.2.0
         version: 18.2.0
       react-dom:
-        specifier: '*'
+        specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       react-hook-form:
-        specifier: '*'
-        version: 7.45.1(react@18.2.0)
+        specifier: ^7.44.3
+        version: 7.45.0(react@18.2.0)
       sharp:
-        specifier: '*'
-        version: 0.32.1
+        specifier: ^0.31.3
+        version: 0.31.3
       slate:
-        specifier: '*'
+        specifier: ^0.94.1
         version: 0.94.1
       tailwind-merge:
-        specifier: '*'
+        specifier: ^1.12.0
         version: 1.13.2
       tailwindcss-animate:
-        specifier: '*'
+        specifier: ^1.0.5
         version: 1.0.6(tailwindcss@3.3.2)
       ui:
         specifier: workspace:*
         version: link:../../packages/ui
       zod:
-        specifier: '*'
+        specifier: ^3.21.4
         version: 3.21.4
     devDependencies:
+      '@turbo/gen':
+        specifier: ^1.9.7
+        version: 1.10.7(@types/node@17.0.45)(typescript@5.1.6)
       '@types/node':
-        specifier: '*'
-        version: 20.4.1
+        specifier: ^17.0.12
+        version: 17.0.45
       '@types/react':
-        specifier: '*'
+        specifier: ^18.0.22
         version: 18.2.14
       '@types/react-dom':
-        specifier: '*'
+        specifier: ^18.0.7
         version: 18.2.6
-      accept-language:
-        specifier: '*'
-        version: 3.0.18
       autoprefixer:
-        specifier: '*'
+        specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.25)
       class-variance-authority:
-        specifier: '*'
-        version: 0.6.1
+        specifier: ^0.4.0
+        version: 0.4.0(typescript@5.1.6)
       clsx:
-        specifier: '*'
+        specifier: ^1.2.1
         version: 1.2.1
       escape-html:
-        specifier: '*'
+        specifier: ^1.0.3
         version: 1.0.3
+      eslint:
+        specifier: ^7.32.0
+        version: 7.32.0
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
       postcss:
-        specifier: '*'
+        specifier: ^8.4.24
         version: 8.4.25
+      prettier:
+        specifier: ^2.5.1
+        version: 2.8.8
       tailwindcss:
-        specifier: '*'
+        specifier: ^3.3.2
         version: 3.3.2
       tsconfig:
         specifier: workspace:*
         version: link:../../packages/tsconfig
       typescript:
-        specifier: '*'
+        specifier: ^5.1.6
         version: 5.1.6
 
   packages/eslint-config-custom:
@@ -734,73 +743,12 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@formatjs/ecma402-abstract@1.11.4:
-    resolution: {integrity: sha512-EBikYFp2JCdIfGEb5G9dyCkTGDmC57KSHhRQOC3aYxoPWVZvfWCDjZwkGYHN7Lis/fmuWl906bnNTJifDQ3sXw==}
-    dependencies:
-      '@formatjs/intl-localematcher': 0.2.25
-      tslib: 2.6.0
-    dev: false
-
-  /@formatjs/ecma402-abstract@1.17.0:
-    resolution: {integrity: sha512-6ueQTeJZtwKjmh23bdkq/DMqH4l4bmfvtQH98blOSbiXv/OUiyijSW6jU22IT8BNM1ujCaEvJfTtyCYVH38EMQ==}
-    dependencies:
-      '@formatjs/intl-localematcher': 0.4.0
-      tslib: 2.6.0
-    dev: false
-
-  /@formatjs/fast-memoize@1.2.1:
-    resolution: {integrity: sha512-Rg0e76nomkz3vF9IPlKeV+Qynok0r7YZjL6syLz4/urSg0IbjPZCB/iYUMNsYA643gh4mgrX3T7KEIFIxJBQeg==}
-    dependencies:
-      tslib: 2.6.0
-    dev: false
-
-  /@formatjs/icu-messageformat-parser@2.1.0:
-    resolution: {integrity: sha512-Qxv/lmCN6hKpBSss2uQ8IROVnta2r9jd3ymUEIjm2UyIkUCHVcbUVRGL/KS/wv7876edvsPe+hjHVJ4z8YuVaw==}
-    dependencies:
-      '@formatjs/ecma402-abstract': 1.11.4
-      '@formatjs/icu-skeleton-parser': 1.3.6
-      tslib: 2.6.0
-    dev: false
-
-  /@formatjs/icu-skeleton-parser@1.3.6:
-    resolution: {integrity: sha512-I96mOxvml/YLrwU2Txnd4klA7V8fRhb6JG/4hm3VMNmeJo1F03IpV2L3wWt7EweqNLES59SZ4d6hVOPCSf80Bg==}
-    dependencies:
-      '@formatjs/ecma402-abstract': 1.11.4
-      tslib: 2.6.0
-    dev: false
-
-  /@formatjs/intl-localematcher@0.2.25:
-    resolution: {integrity: sha512-YmLcX70BxoSopLFdLr1Ds99NdlTI2oWoLbaUW2M406lxOIPzE1KQhRz2fPUkq34xVZQaihCoU29h0KK7An3bhA==}
-    dependencies:
-      tslib: 2.6.0
-    dev: false
-
-  /@formatjs/intl-localematcher@0.2.32:
-    resolution: {integrity: sha512-k/MEBstff4sttohyEpXxCmC3MqbUn9VvHGlZ8fauLzkbwXmVrEeyzS+4uhrvAk9DWU9/7otYWxyDox4nT/KVLQ==}
-    dependencies:
-      tslib: 2.6.0
-    dev: false
-
-  /@formatjs/intl-localematcher@0.4.0:
-    resolution: {integrity: sha512-bRTd+rKomvfdS4QDlVJ6TA/Jx1F2h/TBVO5LjvhQ7QPPHp19oPNMIum7W2CMEReq/zPxpmCeB31F9+5gl/qtvw==}
-    dependencies:
-      tslib: 2.6.0
-    dev: false
-
   /@hookform/resolvers@3.1.1(react-hook-form@7.45.0):
     resolution: {integrity: sha512-tS16bAUkqjITNSvbJuO1x7MXbn7Oe8ZziDTJdA9mMvsoYthnOOiznOTGBYwbdlYBgU+tgpI/BtTU3paRbCuSlg==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
       react-hook-form: 7.45.0(react@18.2.0)
-    dev: false
-
-  /@hookform/resolvers@3.1.1(react-hook-form@7.45.1):
-    resolution: {integrity: sha512-tS16bAUkqjITNSvbJuO1x7MXbn7Oe8ZziDTJdA9mMvsoYthnOOiznOTGBYwbdlYBgU+tgpI/BtTU3paRbCuSlg==}
-    peerDependencies:
-      react-hook-form: ^7.0.0
-    dependencies:
-      react-hook-form: 7.45.1(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.5.0:
@@ -1717,6 +1665,7 @@ packages:
 
   /@turbo/gen@1.10.7(@types/node@17.0.45)(typescript@4.9.5):
     resolution: {integrity: sha512-yQB/A+J17Ze3oewdaJqQ9jcFLzBNU3D/QIZeYU2GBeJk/NiXh2eKfeuu33U/MduOajRVfXl82r8j7It6glVowQ==}
+    hasBin: true
     dependencies:
       chalk: 2.4.2
       commander: 10.0.1
@@ -1737,6 +1686,7 @@ packages:
 
   /@turbo/gen@1.10.7(@types/node@17.0.45)(typescript@5.1.6):
     resolution: {integrity: sha512-yQB/A+J17Ze3oewdaJqQ9jcFLzBNU3D/QIZeYU2GBeJk/NiXh2eKfeuu33U/MduOajRVfXl82r8j7It6glVowQ==}
+    hasBin: true
     dependencies:
       chalk: 2.4.2
       commander: 10.0.1
@@ -1779,10 +1729,6 @@ packages:
 
   /@types/node@17.0.45:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
-    dev: true
-
-  /@types/node@20.4.1:
-    resolution: {integrity: sha512-JIzsAvJeA/5iY6Y/OxZbv1lUcc8dNSE77lb2gnBH+/PJ3lFR1Ccvgwl5JWnHAkNHcRsT0TbpVOsiMKZ1F/yyJg==}
     dev: true
 
   /@types/prop-types@15.7.5:
@@ -1870,13 +1816,6 @@ packages:
       '@typescript-eslint/types': 5.61.0
       eslint-visitor-keys: 3.4.1
     dev: false
-
-  /accept-language@3.0.18:
-    resolution: {integrity: sha512-sUofgqBPzgfcF20sPoBYGQ1IhQLt2LSkxTnlQSuLF3n5gPEqd5AimbvOvHEi0T1kLMiGVqPWzI5a9OteBRth3A==}
-    dependencies:
-      bcp47: 1.1.2
-      stable: 0.1.8
-    dev: true
 
   /acorn-jsx@5.3.2(acorn@7.4.1):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2048,6 +1987,7 @@ packages:
   /autoprefixer@10.4.14(postcss@8.4.25):
     resolution: {integrity: sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ==}
     engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
@@ -2081,11 +2021,6 @@ packages:
 
   /base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
-
-  /bcp47@1.1.2:
-    resolution: {integrity: sha512-JnkkL4GUpOvvanH9AZPX38CxhiLsXMBicBY2IAtqiVN8YulGDQybUydWA4W6yAMtw6iShtw+8HEF6cfrTHU+UQ==}
-    engines: {node: '>=0.10'}
-    dev: true
 
   /big-integer@1.6.51:
     resolution: {integrity: sha512-GPEid2Y9QU1Exl1rpO9B2IPJGHPSupF5GnVIP0blYvNOMer2bTvSWs1jGOUg04hTmu67nmLsQ9TBo1puaotBHg==}
@@ -2275,6 +2210,7 @@ packages:
     resolution: {integrity: sha512-eurOEGc7YVx3majOrOb099PNKgO3KnKSApOprXI4BTq6bcfbqbQXPN2u+rPPmIJ2di23bMwhk0SxCCthBmszEQ==}
     dependencies:
       clsx: 1.2.1
+    dev: false
 
   /clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
@@ -2671,6 +2607,7 @@ packages:
 
   /eslint-config-prettier@8.8.0(eslint@7.32.0):
     resolution: {integrity: sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==}
+    hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
@@ -2902,6 +2839,7 @@ packages:
   /eslint@7.32.0:
     resolution: {integrity: sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==}
     engines: {node: ^10.12.0 || >=12.0.0}
+    hasBin: true
     dependencies:
       '@babel/code-frame': 7.12.11
       '@eslint/eslintrc': 0.4.3
@@ -3444,15 +3382,6 @@ packages:
       side-channel: 1.0.4
     dev: false
 
-  /intl-messageformat@9.13.0:
-    resolution: {integrity: sha512-7sGC7QnSQGa5LZP7bXLDhVDtQOeKGeBFGHF2Y8LVBwYZoQZCgWeKoPGTa5GMG8g/TzDgeXuYJQis7Ggiw2xTOw==}
-    dependencies:
-      '@formatjs/ecma402-abstract': 1.11.4
-      '@formatjs/fast-memoize': 1.2.1
-      '@formatjs/icu-messageformat-parser': 2.1.0
-      tslib: 2.6.0
-    dev: false
-
   /invariant@2.2.4:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
     dependencies:
@@ -3798,14 +3727,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /lucide-react@0.259.0(react@18.2.0):
-    resolution: {integrity: sha512-dFBLc6jRDfcpD9NQ7NyFVa+YR3RHX6+bs+f/UiotvNPho+kd4WyeXWMCCchUf7i/pq3BAaHkbmtkbx/GxxHVUw==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 18.2.0
-    dev: false
-
   /make-error@1.3.6:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
     dev: true
@@ -3893,29 +3814,9 @@ packages:
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  /negotiator@0.6.3:
-    resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
-    engines: {node: '>= 0.6'}
-    dev: false
-
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
-
-  /next-intl@3.0.0-beta.4(next@13.4.9)(react@18.2.0):
-    resolution: {integrity: sha512-PEAmbcMuNalkfxfKLWaliYldX4XtzZUp9cq89kxf05mR6qpyGjFILXRUsfeTTR3pBJEpvCbqAzoRdf37YU5JGg==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@formatjs/intl-localematcher': 0.2.32
-      negotiator: 0.6.3
-      next: 13.4.9(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
-      server-only: 0.0.1
-      use-intl: 2.17.5(react@18.2.0)
-    dev: false
 
   /next-themes@0.2.1(next@13.4.9)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==}
@@ -3932,6 +3833,7 @@ packages:
   /next@13.4.9(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-vtefFm/BWIi/eWOqf1GsmKG3cjKw1k3LjuefKRcL3iiLl3zWzFdPG3as6xtxrGO6gwTzzaO1ktL4oiHt/uvTjA==}
     engines: {node: '>=16.8.0'}
+    hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.1.0
       fibers: '>= 3.1.0'
@@ -3986,10 +3888,6 @@ packages:
 
   /node-addon-api@5.1.0:
     resolution: {integrity: sha512-eh0GgfEkpnoWDq+VY8OyvYhFEzBk6jIYbRKdIlyTiAXIVJ8PyBaKb0rp7oDtoddbdoHWhq8wwr+XZ81F1rpNdA==}
-    dev: false
-
-  /node-addon-api@6.1.0:
-    resolution: {integrity: sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==}
     dev: false
 
   /node-plop@0.26.3:
@@ -4320,6 +4218,7 @@ packages:
   /prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /progress@2.0.3:
@@ -4368,15 +4267,6 @@ packages:
 
   /react-hook-form@7.45.0(react@18.2.0):
     resolution: {integrity: sha512-AbHeZ4ad+0dEIknSW9dBgIwcvRDfZ1O97sgj75WaMdOX0eg8TBiUf9wxzVkIjZbk76BBIE9lmFOzyD4PN80ZQg==}
-    engines: {node: '>=12.22.0'}
-    peerDependencies:
-      react: ^16.8.0 || ^17 || ^18
-    dependencies:
-      react: 18.2.0
-    dev: false
-
-  /react-hook-form@7.45.1(react@18.2.0):
-    resolution: {integrity: sha512-6dWoFJwycbuFfw/iKMcl+RdAOAOHDiF11KWYhNDRN/OkUt+Di5qsZHwA0OwsVnu9y135gkHpTw9DJA+WzCeR9w==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
@@ -4615,10 +4505,6 @@ packages:
       upper-case-first: 1.1.2
     dev: true
 
-  /server-only@0.0.1:
-    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
-    dev: false
-
   /sharp@0.31.3:
     resolution: {integrity: sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==}
     engines: {node: '>=14.15.0'}
@@ -4627,21 +4513,6 @@ packages:
       color: 4.2.3
       detect-libc: 2.0.1
       node-addon-api: 5.1.0
-      prebuild-install: 7.1.1
-      semver: 7.5.4
-      simple-get: 4.0.1
-      tar-fs: 2.1.1
-      tunnel-agent: 0.6.0
-    dev: false
-
-  /sharp@0.32.1:
-    resolution: {integrity: sha512-kQTFtj7ldpUqSe8kDxoGLZc1rnMFU0AO2pqbX6pLy3b7Oj8ivJIdoKNwxHVQG2HN6XpHPJqCSM2nsma2gOXvOg==}
-    engines: {node: '>=14.15.0'}
-    requiresBuild: true
-    dependencies:
-      color: 4.2.3
-      detect-libc: 2.0.1
-      node-addon-api: 6.1.0
       prebuild-install: 7.1.1
       semver: 7.5.4
       simple-get: 4.0.1
@@ -4730,10 +4601,6 @@ packages:
 
   /sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
-
-  /stable@0.1.8:
-    resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
-    dev: true
 
   /streamsearch@1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
@@ -4905,6 +4772,7 @@ packages:
   /tailwindcss@3.3.2:
     resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}
     engines: {node: '>=14.0.0'}
+    hasBin: true
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -5009,6 +4877,7 @@ packages:
 
   /ts-node@10.9.1(@types/node@17.0.45)(typescript@4.9.5):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+    hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
       '@swc/wasm': '>=1.2.50'
@@ -5039,6 +4908,7 @@ packages:
 
   /ts-node@10.9.1(@types/node@17.0.45)(typescript@5.1.6):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+    hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
       '@swc/wasm': '>=1.2.50'
@@ -5189,6 +5059,7 @@ packages:
   /typescript@5.1.6:
     resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
     engines: {node: '>=14.17'}
+    hasBin: true
     dev: true
 
   /uglify-js@3.17.4:
@@ -5219,6 +5090,7 @@ packages:
 
   /update-browserslist-db@1.0.11(browserslist@4.21.9):
     resolution: {integrity: sha512-dCwEFf0/oT85M1fHBg4F0jtLwJrutGoHSQXCh7u4o2t1drG+c0a9Flnqww6XUKSfQMPpJBRjU8d4RXB09qtvaA==}
+    hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
     dependencies:
@@ -5262,17 +5134,6 @@ packages:
       '@types/react': 18.2.14
       react: 18.2.0
       tslib: 2.6.0
-    dev: false
-
-  /use-intl@2.17.5(react@18.2.0):
-    resolution: {integrity: sha512-pkTRoGZsOyHImBFgV23z7g/Hzt1auap+cWvsiWzHpc70NK7Rm9R3LNI3wm3FnYEWNF8N3+CZKV+SCTrHwcNK1w==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@formatjs/ecma402-abstract': 1.17.0
-      intl-messageformat: 9.13.0
-      react: 18.2.0
     dev: false
 
   /use-sidecar@1.1.2(@types/react@18.2.14)(react@18.2.0):
