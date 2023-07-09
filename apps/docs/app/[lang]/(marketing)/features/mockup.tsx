@@ -6,7 +6,7 @@ type MockupProps = {
   summary: React.ReactNode;
 };
 
-export async function Mockup({ title, summary, children }: MockupProps) {
+export function Mockup({ title, summary, children }: MockupProps) {
   return (
     <section className="grid grid-cols-1 py-8 lg:grid-cols-2 my-16">
       <div className=" mb-4 flex flex-col justify-center space-y-4 md:mb-0 md:mr-8">
