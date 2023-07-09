@@ -230,117 +230,114 @@ importers:
   apps/docs:
     dependencies:
       '@hookform/resolvers':
-        specifier: '*'
-        version: 3.1.1(react-hook-form@7.45.1)
+        specifier: ^3.1.1
+        version: 3.1.1(react-hook-form@7.45.0)
       '@radix-ui/react-accordion':
-        specifier: '*'
+        specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-dialog':
-        specifier: '*'
+        specifier: ^1.0.4
         version: 1.0.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-label':
-        specifier: '*'
+        specifier: ^2.0.2
         version: 2.0.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-select':
-        specifier: ^*
+        specifier: ^1.2.2
         version: 1.2.2(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-slot':
-        specifier: '*'
+        specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.14)(react@18.2.0)
       '@radix-ui/react-switch':
-        specifier: '*'
+        specifier: ^1.0.3
         version: 1.0.3(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-tabs':
-        specifier: '*'
+        specifier: 1.0.4
         version: 1.0.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-toast':
-        specifier: '*'
+        specifier: ^1.1.4
         version: 1.1.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
-      framer-motion:
-        specifier: '*'
-        version: 10.12.18(react-dom@18.2.0)(react@18.2.0)
       lib:
         specifier: workspace:*
         version: link:../../packages/lib
       lucide-react:
-        specifier: '*'
-        version: 0.259.0(react@18.2.0)
+        specifier: 0.105.0-alpha.4
+        version: 0.105.0-alpha.4(react@18.2.0)
       next:
-        specifier: '*'
+        specifier: ^13.4.1
         version: 13.4.9(react-dom@18.2.0)(react@18.2.0)
-      next-intl:
-        specifier: 3.0.0-beta.4
-        version: 3.0.0-beta.4(next@13.4.9)(react@18.2.0)
       next-themes:
-        specifier: '*'
+        specifier: ^0.2.1
         version: 0.2.1(next@13.4.9)(react-dom@18.2.0)(react@18.2.0)
       react:
-        specifier: '*'
+        specifier: ^18.2.0
         version: 18.2.0
       react-dom:
-        specifier: '*'
+        specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       react-hook-form:
-        specifier: '*'
-        version: 7.45.1(react@18.2.0)
+        specifier: ^7.44.3
+        version: 7.45.0(react@18.2.0)
       sharp:
-        specifier: '*'
-        version: 0.32.1
+        specifier: ^0.31.3
+        version: 0.31.3
       slate:
-        specifier: '*'
+        specifier: ^0.94.1
         version: 0.94.1
       tailwind-merge:
-        specifier: '*'
+        specifier: ^1.12.0
         version: 1.13.2
       tailwindcss-animate:
-        specifier: '*'
+        specifier: ^1.0.5
         version: 1.0.6(tailwindcss@3.3.2)
       ui:
         specifier: workspace:*
         version: link:../../packages/ui
       zod:
-        specifier: '*'
+        specifier: ^3.21.4
         version: 3.21.4
     devDependencies:
+      '@turbo/gen':
+        specifier: ^1.9.7
+        version: 1.10.7(@types/node@17.0.45)(typescript@4.9.5)
       '@types/node':
-        specifier: '*'
-        version: 20.4.1
+        specifier: ^17.0.12
+        version: 17.0.45
       '@types/react':
-        specifier: '*'
+        specifier: ^18.0.22
         version: 18.2.14
       '@types/react-dom':
-        specifier: '*'
+        specifier: ^18.0.7
         version: 18.2.6
-      accept-language:
-        specifier: '*'
-        version: 3.0.18
       autoprefixer:
-        specifier: '*'
+        specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.25)
       class-variance-authority:
-        specifier: '*'
-        version: 0.6.1
+        specifier: ^0.4.0
+        version: 0.4.0(typescript@4.9.5)
       clsx:
-        specifier: '*'
+        specifier: ^1.2.1
         version: 1.2.1
       escape-html:
-        specifier: '*'
+        specifier: ^1.0.3
         version: 1.0.3
+      eslint:
+        specifier: ^7.32.0
+        version: 7.32.0
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
       postcss:
-        specifier: '*'
+        specifier: ^8.4.24
         version: 8.4.25
+      prettier:
+        specifier: ^2.5.1
+        version: 2.8.8
       tailwindcss:
-        specifier: '*'
+        specifier: ^3.3.2
         version: 3.3.2
-      tsconfig:
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
       typescript:
-        specifier: '*'
-        version: 5.1.6
+        specifier: ^4.5.3
+        version: 4.9.5
 
   apps/houtman:
     dependencies:
@@ -696,19 +693,6 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
-
-  /@emotion/is-prop-valid@0.8.8:
-    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
-    requiresBuild: true
-    dependencies:
-      '@emotion/memoize': 0.7.4
-    dev: false
-    optional: true
-
-  /@emotion/memoize@0.7.4:
-    resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
-    dev: false
-    optional: true
 
   /@eslint/eslintrc@0.4.3:
     resolution: {integrity: sha512-J6KFFz5QCYUJq3pf0mjEcCJVERbzv71PUIDczuh9JkwGEzced6CO5ADLHB1rbf/+oPBtoPfMYNOpGDzCANlbXw==}
@@ -1730,6 +1714,7 @@ packages:
 
   /@turbo/gen@1.10.7(@types/node@17.0.45)(typescript@4.9.5):
     resolution: {integrity: sha512-yQB/A+J17Ze3oewdaJqQ9jcFLzBNU3D/QIZeYU2GBeJk/NiXh2eKfeuu33U/MduOajRVfXl82r8j7It6glVowQ==}
+    hasBin: true
     dependencies:
       chalk: 2.4.2
       commander: 10.0.1
@@ -2886,6 +2871,7 @@ packages:
   /eslint@7.32.0:
     resolution: {integrity: sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==}
     engines: {node: ^10.12.0 || >=12.0.0}
+    hasBin: true
     dependencies:
       '@babel/code-frame': 7.12.11
       '@eslint/eslintrc': 0.4.3
@@ -3072,24 +3058,6 @@ packages:
   /fraction.js@4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
-
-  /framer-motion@10.12.18(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-cfhiUpPbj+0eEWKjuD+5cz5cMqH71xOtMxGiS/cSGfHn2OlHIEAqFnFyzEMENw5PxWR9bMVhatzzpD6lexmHZQ==}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      tslib: 2.6.0
-    optionalDependencies:
-      '@emotion/is-prop-valid': 0.8.8
-    dev: false
 
   /fs-constants@1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
@@ -4315,6 +4283,7 @@ packages:
   /prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /progress@2.0.3:
@@ -4900,6 +4869,7 @@ packages:
   /tailwindcss@3.3.2:
     resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}
     engines: {node: '>=14.0.0'}
+    hasBin: true
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -5151,6 +5121,7 @@ packages:
   /typescript@4.9.5:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
+    hasBin: true
 
   /typescript@5.1.6:
     resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
