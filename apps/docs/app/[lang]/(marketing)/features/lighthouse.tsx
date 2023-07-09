@@ -8,7 +8,7 @@ import { Scores } from "./circular-progress-bar";
 import { Code } from "ui/typography";
 
 async function getLighthouseScores() {
-  const res = await fetch("http://localhost:3000/features/api");
+  const res = await fetch("/features/api");
   const data = res.json();
 
   const post = fetch("http://culicom.amsterdam:3001/api/send", {
