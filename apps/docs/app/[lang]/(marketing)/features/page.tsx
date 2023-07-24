@@ -24,13 +24,7 @@ export default function Page() {
       />
 
       <div className="lg:space-y-32 my-16 md:my-32">
-        <Mockup
-          title="Geen vervelende cookiebanner"
-          summary="Kobalt verwerkt geen privacygevoelige informatie voor haar
-              analytics. Hiermee voldoet Kobalt aan GDPR en gebruiken wij geen
-              cookiebanner (die overigens door andere bedrijfen [Link](onjuist)
-              gebruikt wordt.)"
-        >
+        <Mockup title={t("cookie.title")} summary={t("cookie.description")}>
           <Cookies />
         </Mockup>
 
@@ -43,7 +37,7 @@ export default function Page() {
               geoptimaliseerd. Op onze blog lees je hoe wij elke website laten
               testen door onze{" "}
               <Button asChild variant="inline" className="p-0">
-                <Link href="/posts/blog/technisch/de-kracht-van-google's-lighthouse-voor-seo-optimalisatie">
+                <Link href="/blog/de-kracht-van-google's-lighthouse-voor-seo-optimalisatie">
                   eigen Lighthouse integratie
                 </Link>
               </Button>
@@ -75,7 +69,9 @@ export default function Page() {
               van een club of bar is een darkmode bijvoorbeeld cruciaal. Lees op
               onze blog verder waarom{" "}
               <Button asChild variant="inline" className="p-0">
-                <Link href="/posts/blog/technisch/dark-mode">Dark mode</Link>
+                <Link href="/blog/laat-dark-mode-ook-voor-jou-werken">
+                  Dark mode
+                </Link>
               </Button>{" "}
               ook voor jou belangrijk kan zijn.
             </>
@@ -95,8 +91,8 @@ export default function Page() {
               Door teksten automatisch te laten vertalen kun je meer potentiele
               bezoekers bereiken. Op onze blog leggen we precies uit hoe we het
               doen, en waarom{" "}
-              <Button asChild variant="link" className="inline p-0">
-                <Link href="/posts/blog/technisch/hoe-kobalt-het-web-vertaalt">
+              <Button asChild variant="inline" className="p-0">
+                <Link href="/blog/hoe-kobalt-het-web-vertaalt">
                   Slimme vertalingen
                 </Link>
               </Button>{" "}
@@ -109,8 +105,16 @@ export default function Page() {
 
         <Mockup
           title="Realtime analytics"
-          summary="Door teksten automatisch te laten vertalen kun je meer potentiele
-          bezoekers bereiken."
+          summary={
+            <>
+              Eigen (slimme) analytics geven jou realtime inzicht in
+              gebruikersaantallen op jouw website. Lees op onze blog meer over
+              <Button asChild variant="inline" className="p-0">
+                <Link href="/blog/analytics">onze analytics</Link>
+              </Button>{" "}
+              software.
+            </>
+          }
         >
           <Analytics />
         </Mockup>

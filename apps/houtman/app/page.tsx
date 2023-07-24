@@ -40,7 +40,7 @@ const events = [
 export default function Home() {
   return (
     <main>
-      <section className="text-gray-600 body-font">
+      <section className="my-12 text-gray-600 body-font">
         <div className="container mx-auto flex px-5 md:flex-row flex-col items-center">
           <div className=" md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <H1>Bouwen met vakmanschap, renovaties met passie</H1>
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
           <div className="lg:w-full md:w-1/2 w-5/6">
             <Image
-              className="object-cover object-center rounded"
+              className="object-cover aspect-video object-center rounded"
               alt="hero"
               src={conor}
             />
@@ -136,15 +136,15 @@ export default function Home() {
                 cold-pressed. Gastropub street art beard dreamcatcher neutra,
                 ethical XOXO lumbersexual.
               </p>
-              <Button variant="link" asChild className="ml-auto">
-                <Link href="#">
-                  Learn More
+              <Button asChild variant="link" className="ml-auto mt-4 px-0">
+                <Link href="/timmerwerk">
+                  Lees verder
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     className="w-4 h-4 ml-2"
                     viewBox="0 0 24 24"
                   >
@@ -167,15 +167,15 @@ export default function Home() {
                 cold-pressed. Gastropub street art beard dreamcatcher neutra,
                 ethical XOXO lumbersexual.
               </p>
-              <Button variant="link" asChild className="ml-auto">
-                <Link href="#">
-                  Learn More
+              <Button asChild variant="link" className="ml-auto mt-4 px-0">
+                <Link href="/aanbouw">
+                  Lees verder
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     className="w-4 h-4 ml-2"
                     viewBox="0 0 24 24"
                   >
@@ -198,15 +198,15 @@ export default function Home() {
                 cold-pressed. Gastropub street art beard dreamcatcher neutra,
                 ethical XOXO lumbersexual.
               </p>
-              <Button variant="link" asChild className="ml-auto">
-                <Link href="#">
-                  Learn More
+              <Button asChild variant="link" className="ml-auto mt-4 px-0">
+                <Link href="/renovatie">
+                  Lees verder
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     className="w-4 h-4 ml-2"
                     viewBox="0 0 24 24"
                   >

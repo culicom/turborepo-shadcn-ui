@@ -24,7 +24,10 @@ async function getLighthouseScores() {
         website: "39aa1be2-2c1f-4e48-8c4d-74484ce92e50",
         name: "lighthouse",
         data: {
-          foo: "bar",
+          lighthouse: {
+            performance: 99,
+            seo: 100,
+          },
         },
       },
       type: "event",

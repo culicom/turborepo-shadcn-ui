@@ -9,7 +9,7 @@ function setUpQuery(key) {
   for (let key in parameters) {
     query += `${key}=${parameters[key]}`;
   }
-  return `${query}&key=${key}&category=performance&category=seo&category=best_practices&category=accessibility`;
+  return `${query}&key=${key}&category=performance`; //&category=seo&category=best_practices&category=accessibility
 }
 
 export async function GET() {

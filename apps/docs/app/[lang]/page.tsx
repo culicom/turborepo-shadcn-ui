@@ -14,20 +14,19 @@ export default async function IndexPage(props: any) {
       />
 
       <FeatureBlock />
-
+      {/* 
       <PostBlock
         locale="nl"
         token={"null"}
         type={{ value: { name: "showcase", id: "63e29b7245a339dda4a0179a" } }}
-      />
-
-      <AboutBlock />
-
+      /> */}
       <PostBlock
         locale="nl"
         token={"null"}
         type={{ value: { name: "blog", id: "63e29b5845a339dda4a01787" } }}
       />
+
+      <AboutBlock />
 
       <AccordionBlock />
     </div>

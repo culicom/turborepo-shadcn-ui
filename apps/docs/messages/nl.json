@@ -12,6 +12,10 @@
       "tag": "Features",
       "title": "Wat maakt Kobalt zo uniek",
       "payline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec lacus nec urna imperdiet venenatis in at magna. Nulla ultrices semper dui, at maximus risus ultrices id."
+    },
+    "cookie": {
+      "title": "Geen vervelende cookiebanner",
+      "description": "Kobalt verwerkt geen privacygevoelige informatie voor haar analytics. Hiermee voldoet Kobalt aan GDPR en gebruiken wij geen cookiebanner (die overigens door andere bedrijfen [Link](onjuist) gebruikt wordt.)"
     }
   }
 }

@@ -1,3 +1,4 @@
+import { Card } from "ui";
 import { H2 } from "ui/typography";
 
 type MockupProps = {
@@ -14,12 +15,12 @@ export function Mockup({ title, summary, children }: MockupProps) {
         <summary className="list-none">{summary}</summary>
       </div>
 
-      <div className="rounded bg-muted border relative flex items-end w-full  h-fit lg:h-[24rem] flex-grow ">
+      <Card className=" relative h-fit lg:h-[24rem]">
         <div className="shadow-mockup w-4 -ml-2 shadow-gray-300 h-4 absolute top-4 rounded-full"></div>
         <div className="flex h-full self-start-end justify-center w-full p-2">
           {children}
         </div>
-      </div>
+      </Card>
     </section>
   );
 }

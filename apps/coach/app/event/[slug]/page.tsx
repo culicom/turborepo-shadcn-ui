@@ -12,7 +12,7 @@ export default function Home(props: any) {
     <main>
       <section className="text-gray-600 body-font overflow-hidden">
         <div className="px-8">
-          <div className="mx-auto flex flex-wrap">
+          <div className="container mx-auto flex flex-wrap">
             <Image
               alt="ecommerce"
               width={600}
