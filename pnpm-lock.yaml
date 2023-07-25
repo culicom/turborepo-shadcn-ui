@@ -25,7 +25,7 @@ importers:
       eslint-config-custom: workspace:*
       lucide-react: 0.105.0-alpha.4
       next: ^13.4.1
-      next-intl: ^2.13.1
+      next-intl: 3.0.0-beta.4
       next-themes: ^0.2.1
       postcss: ^8.4.24
       prettier: ^2.5.1
@@ -52,7 +52,7 @@ importers:
       '@radix-ui/react-toast': 1.1.4_pykdanru7vtvy3sxrufrizyr6q
       lucide-react: 0.105.0-alpha.4_react@18.2.0
       next: 13.4.12_biqbaboplfbrettd7655fr4n2y
-      next-intl: 2.19.0_next@13.4.12+react@18.2.0
+      next-intl: 3.0.0-beta.4_next@13.4.12+react@18.2.0
       next-themes: 0.2.1_54ux7fu2vrztxgcjbkegvwjefy
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -4028,8 +4028,8 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: true
 
-  /next-intl/2.19.0_next@13.4.12+react@18.2.0:
-    resolution: {integrity: sha512-vK/3Lk1A2zPVl+D6n/cft+MsD6nsZO5/F4l+pHXSXrNQIjdClvGMKouM3xK/u5n75E4mmHQevVdyJQ1a7zWICw==}
+  /next-intl/3.0.0-beta.4_next@13.4.12+react@18.2.0:
+    resolution: {integrity: sha512-PEAmbcMuNalkfxfKLWaliYldX4XtzZUp9cq89kxf05mR6qpyGjFILXRUsfeTTR3pBJEpvCbqAzoRdf37YU5JGg==}
     engines: {node: '>=10'}
     peerDependencies:
       next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
@@ -4039,6 +4039,7 @@ packages:
       negotiator: 0.6.3
       next: 13.4.12_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
+      server-only: 0.0.1
       use-intl: 2.19.0_react@18.2.0
     dev: false
 
@@ -4812,6 +4813,10 @@ packages:
       no-case: 2.3.2
       upper-case-first: 1.1.2
     dev: true
+
+  /server-only/0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+    dev: false
 
   /sharp/0.31.3:
     resolution: {integrity: sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==}
