@@ -31,7 +31,7 @@ import { H1 } from "ui/typography/h1";
 import { H2 } from "ui/typography/h2";
 import { P } from "ui/typography/p";
 import { Button, Label } from "ui";
-import { Logo } from "../components/logo";
+import { Logo } from "../../components/logo";
 import Link from "next/link";
 
 const data = {

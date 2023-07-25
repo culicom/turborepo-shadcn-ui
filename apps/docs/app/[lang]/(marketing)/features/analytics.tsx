@@ -66,7 +66,7 @@ export async function Analytics() {
   const data = await getStats(user);
   const buttonData = await getButtonStats(user);
   console.log(buttonData);
-  const clickCount = buttonData.find((data) => data.x === "analytics").y ?? 0;
+  const clickCount = buttonData.find((data) => data.x === "analytics")?.y ?? 0;
 
   return (
     <div className="flex  flex-col w-full h-full lg:h-full items-stretch justify-between">
