@@ -81,22 +81,26 @@ export function CircularProgressBar(props: CircularProps) {
 export function Scores({ data }: any) {
   return (
     <span className="mb-16 pt-24 flex flex-wrap justify-center self-center">
-      {Object.keys(data?.lighthouseResult?.categories).map((category) => (
-        <label
-          key={category}
-          className="text-success mx-2 flex flex-col space-y-2 py-2 text-center text-sm"
-        >
-          <CircularProgressBar
-            key={1}
-            strokeWidth={10}
-            sqSize={100}
-            percentage={
-              data?.lighthouseResult?.categories[category]?.score * 100
-            }
-          />
-          {category}
-        </label>
-      ))}
+      {data?.score ? (
+        Object.keys(data?.score).map((category) => (
+          <label
+            key={category}
+            className="text-success mx-2 flex flex-col space-y-2 py-2 text-center text-sm"
+          >
+            <CircularProgressBar
+              key={1}
+              strokeWidth={10}
+              sqSize={100}
+              percentage={data?.score[category]?.score * 100}
+            />
+            {category}
+          </label>
+        ))
+      ) : (
+        <div className="items-center mx-auto text-success flex space-y-2 py-2 text-center text-sm">
+          Geen score gevonden
+        </div>
+      )}
     </span>
   );
 }

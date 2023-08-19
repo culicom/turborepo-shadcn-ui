@@ -59,7 +59,7 @@ export default function RootLayout({ children, params }: any) {
         </body>
         <Script
           strategy="afterInteractive"
-          src={`https://umami.culicom.amsterdam/script.js`}
+          src={`http://178.62.218.134:3001/script.js`}
           data-website-id={process.env.UMAMI_ID}
         ></Script>
       </html>

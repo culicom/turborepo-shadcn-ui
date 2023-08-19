@@ -41,7 +41,7 @@ export default async function Page() {
             semper dui, at maximus risus ultrices id."
       />
 
-      <article className="mx-auto my-16 md:my-32 max-w-3xl">
+      <article className="mx-auto my-16 md:my-36 max-w-3xl">
         <Renderer content={doc?.layout[0]?.richText} />
       </article>
 

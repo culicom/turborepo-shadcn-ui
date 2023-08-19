@@ -49,7 +49,7 @@ const data = [
         children: [
           {
             type: "p",
-            text: "Kobalt maakt voor jou een op maat gemaakt webdesign. Je website matcht met je huisstijl en straalt professionaliteit uit. Alle webdesigns worden ‘mobile-first’ ontworpen. Dat betekent dat jouw website perfect werkt alle mobiele devices. ",
+            text: "Kobalt maakt voor jou een op maat gemaakt webdesign. Je website matcht met je huisstijl en straalt professionaliteit uit. Alle webdesigns worden ‘mobile-first’ ontworpen. Dat betekent dat jouw website perfect werkt op alle mobiele devices.",
           },
         ],
       },
@@ -63,7 +63,7 @@ const data = [
         children: [
           {
             type: "p",
-            text: `Kobalt specialiseert zich in Search engine optimization (SEO). Door websites te optimaliseren op het gebied van SEO, scoren onze websites automatisch goed bij Google. Kobalt weet wat Google belangrijk vindt.`,
+            text: `Kobalt specialiseert zich in Search Engine Optimization (SEO). Door websites te optimaliseren op het gebied van SEO, scoren onze websites automatisch goed bij Google. Kobalt weet wat Google belangrijk vindt.`,
           },
         ],
       },
@@ -77,7 +77,7 @@ const data = [
         children: [
           {
             type: "p",
-            text: "Kobalt werkt met geavanceerde Artificial intelligence (AI) technieken om zo jouw website vindbaar en gebruiksklaar te maken in alle talen die jij wilt. Zo gebruiken wij AI om jouw publiek te vegroten.",
+            text: "Kobalt werkt met geavanceerde Artificial Intelligence (AI) technieken om zo jouw website vindbaar en gebruiksklaar te maken in alle talen die jij wilt. Zo gebruiken wij AI om jouw publiek te vegroten.",
           },
         ],
       },
@@ -91,7 +91,7 @@ const data = [
         children: [
           {
             type: "p",
-            text: "Je neemt je website af voor een vast bedrag per maand. Jouw website blijft veilig in de lucht, en wordt up-to-date gehouden met de laatste technieken. Een website hoeft geen grote investering te zijn.",
+            text: "Je neemt je website af voor een vast bedrag per maand. Vervolgens houdt kobalt jouw website veilig in de lucht, en wordt deze up-to-date gehouden met de laatste technieken. Het beschikken over een professionele website hoeft geen grote investering te zijn.",
           },
         ],
       },
@@ -101,7 +101,7 @@ const data = [
 
 export function AboutBlock() {
   return (
-    <div className="my-16 md:my-32">
+    <div className="my-16 md:my-36">
       <article className="mx-auto max-w-3xl md:text-center">
         <H4>Onze websites</H4>
 
@@ -121,7 +121,7 @@ export function AboutBlock() {
         {data?.map((item) => (
           <li className="prose py-8 px-0" key={item?.title}>
             <div>
-              <div className="mb-9 flex justify-center text-center">
+              <div className="flex justify-center text-center">
                 {item?.icon}
               </div>
               <H3 className="mt-8 text-center text-blue-700 font-semibold tracking-tight">

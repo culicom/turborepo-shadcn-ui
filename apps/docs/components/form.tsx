@@ -88,7 +88,7 @@ export function ProfileForm() {
   }
 
   return (
-    <div className="max-w-3xl my-16 md:my-32 md:mx-auto ">
+    <div className="max-w-3xl my-16 md:my-36 md:mx-auto ">
       <article className="md:text-center">
         <H4>contact</H4>
         <H2 className="text-blue-950 dark:text-white mt-0 border-none">
@@ -112,12 +112,14 @@ export function ProfileForm() {
                 name="name"
                 render={({ field }) => (
                   <FormItem className="md:w-1/2">
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel className="text-black dark:text-white">
+                      Name
+                    </FormLabel>
                     <FormControl>
                       <Input placeholder="John Doe" {...field} />
                     </FormControl>
 
-                    <FormMessage />
+                    <FormMessage className="text-red-500" />
                   </FormItem>
                 )}
               />
@@ -126,12 +128,14 @@ export function ProfileForm() {
                 name="company"
                 render={({ field }) => (
                   <FormItem className="md:w-1/2">
-                    <FormLabel>Bedrijf</FormLabel>
+                    <FormLabel className="text-black dark:text-white">
+                      Bedrijf
+                    </FormLabel>
                     <FormControl>
                       <Input placeholder="Jouw bedrijf hier" {...field} />
                     </FormControl>
 
-                    <FormMessage />
+                    <FormMessage className="text-red-500" />
                   </FormItem>
                 )}
               />
@@ -142,12 +146,14 @@ export function ProfileForm() {
               name="website"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Huidige website</FormLabel>
+                  <FormLabel className="text-black dark:text-white">
+                    Huidige website
+                  </FormLabel>
                   <FormControl>
                     <Input placeholder="huidigewebsite.nl" {...field} />
                   </FormControl>
 
-                  <FormMessage />
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
@@ -156,7 +162,9 @@ export function ProfileForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email *</FormLabel>
+                  <FormLabel className="text-black dark:text-white">
+                    Email *
+                  </FormLabel>
                   <FormControl>
                     <Input
                       type="email"
@@ -165,7 +173,7 @@ export function ProfileForm() {
                     />
                   </FormControl>
 
-                  <FormMessage />
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
@@ -175,12 +183,14 @@ export function ProfileForm() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message *</FormLabel>
+                  <FormLabel className="text-black dark:text-white">
+                    Message *
+                  </FormLabel>
                   <FormControl>
                     <Textarea placeholder="Jouw bericht" {...field} />
                   </FormControl>
 
-                  <FormMessage />
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />

@@ -20,7 +20,7 @@ const list = [
 
 export function FeatureBlock() {
   return (
-    <div className="my-16 md:my-32 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+    <div className="my-16 md:my-36 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
       <H2 className="text-blue-950 dark:text-white border-none">
         Altijd een werkende website voor €100 per maand:
       </H2>

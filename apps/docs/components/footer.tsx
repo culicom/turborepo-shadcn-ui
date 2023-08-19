@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { siteConfig } from "../config/site";
 
-import { Icons } from "./icons";
 import { Logo } from "./logo";
 import { H3 } from "ui/typography/h3";
 import { Button } from "ui";
@@ -42,13 +41,13 @@ export async function Footer() {
         className="bg-blue-950 py-4 dark:bg-gray-900"
         aria-label="Site Footer"
       >
-        <div className="container mx-auto py-8 text-white sm:px-6 lg:px-8">
+        <div className="container mx-auto py-8 text-white">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
               <div className="dark flex sm:justify-start">
                 <Link
                   href="/"
-                  className="group z-20 flex items-center space-x-2.5 text-white"
+                  className="group z-20 flex items-centertext-white"
                 >
                   <Logo />
                 </Link>
@@ -58,23 +57,20 @@ export async function Footer() {
                 <ul className="mt-8 text-sm">
                   <li>
                     <Button variant="link" asChild className="pl-0 text-white">
-                      <Link href="mailto:contact@culicom.amsterdam">
-                        <Icons.mail className="mr-4 w-5" />
-                        contact@culicom.amsterdam
+                      <Link href="mailto:contact@kobalt.amsterdam">
+                        contact@kobalt.amsterdam
                       </Link>
                     </Button>
                   </li>
 
                   <li>
                     <Button variant="link" className="pl-0 text-white">
-                      <Icons.phone className="mr-4 w-5" />
                       0612345678
                     </Button>
                   </li>
 
                   <li>
                     <Button variant="link" className="pl-0 text-white">
-                      <Icons.pin className="mr-4 w-5" />
                       <address className="pl-0 text-left not-italic">
                         Develstein 544, Amsterdam Zuidoost
                       </address>
@@ -122,9 +118,7 @@ export async function Footer() {
                           asChild
                           variant="link"
                         >
-                          <Link
-                            href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}/${doc?.slug}`}
-                          >
+                          <Link href={`/blog/${doc?.slug}`}>
                             <span className="line-clamp-2 truncate">
                               {doc?.title}
                             </span>

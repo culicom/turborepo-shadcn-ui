@@ -8,7 +8,7 @@ import { H3 } from "ui/typography/h3";
 import { H4 } from "ui/typography/h4";
 import { P } from "ui/typography/p";
 
-import { Badge, Card, CardContent, CardHeader } from "ui";
+import { Badge, Button, Card, CardContent, CardHeader } from "ui";
 import { badges } from "../../lib/colors";
 
 type QueryType = {
@@ -55,7 +55,7 @@ export async function PostBlock({
   if (!data.docs) return null;
 
   return (
-    <div className="my-16 md:my-32">
+    <div className="my-16 md:my-36">
       <article className="mx-auto my-12 max-w-3xl md:text-center">
         <H4>{name}</H4>
         <H2 className="text-blue-950 dark:text-white mt-0 border-none">
@@ -120,12 +120,12 @@ export async function PostBlock({
         ))}
       </div>
 
-      <Link
-        className="link mt-4 flex justify-end "
-        href={`/${name === "blog" ? "blog" : "showcase"}`}
-      >
-        {name === "showcase" ? "Zie meer werk" : "Ga naar blog"}→
-      </Link>
+      <Button variant="link" className="flex justify-end" asChild>
+        <Link className=" " href={`/${name === "blog" ? "blog" : "showcase"}`}>
+          {name === "showcase" ? "Zie meer werk " : "Ga naar blog "}{" "}
+          <span className="ml-2">→</span>
+        </Link>
+      </Button>
     </div>
   );
 }

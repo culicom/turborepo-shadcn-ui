@@ -8,6 +8,8 @@ import { H2 } from "ui/typography/h2";
 import { H3 } from "ui/typography/h3";
 import { H4 } from "ui/typography/h4";
 import { P } from "ui/typography/p";
+import { Button } from "ui";
+import Link from "next/link";
 
 const serialize = (children: any) =>
   children.map((node: any, i: number) => {
@@ -62,9 +64,11 @@ const serialize = (children: any) =>
         return <li key={i}>{serialize(node.children)}</li>;
       case "link":
         return (
-          <a href={escapeHTML(node.url)} key={i}>
-            {serialize(node.children)}
-          </a>
+          <Button variant="link" className="inline px-0 underline" asChild>
+            <Link className="inline" href={escapeHTML(node.url)} key={i}>
+              {serialize(node.children)}
+            </Link>
+          </Button>
         );
 
       default:

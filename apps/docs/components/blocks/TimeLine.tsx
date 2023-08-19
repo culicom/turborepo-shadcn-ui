@@ -1,6 +1,9 @@
+"use client";
+
 import { Badge } from "ui";
 import { Renderer } from "../renderer";
 import { H2, H3 } from "ui/typography";
+import { motion } from "framer-motion";
 
 type StepType = {
   title: string;
@@ -31,12 +34,19 @@ export function TimeLineBlock({ title, richText, list }: TimeLineBlockType) {
               className="mx-6 mb-10 rounded-lg dark:bg-muted p-4 pr-0 shadow-lg lg:mr-6 lg:w-[95%] lg:pr-4 odd:lg:ml-[-100%]"
             >
               <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
-              <Badge className="mb-2">{fase}</Badge>
-              <H3 className="my-2">{title}</H3>
+              <motion.div
+                initial={{ x: 4, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.25, delay: 0.25 }}
+                viewport={{ once: true }}
+              >
+                <Badge className="mb-2">{fase}</Badge>
+                <H3 className="my-2">{title}</H3>
 
-              <div className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                <Renderer content={richText} />
-              </div>
+                <div className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                  <Renderer content={richText} />
+                </div>
+              </motion.div>
             </li>
           ))}
         </ol>

@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 
 import { Button, Label } from "ui";
 import { Loader2 } from "lucide-react";
+import { Code } from "ui/typography";
 
 const i18n = {
   nl: "Kobalt vertaalt jouw website slim met behulp van AI. Zo bereik je meer klanten, met minder moeite.",
@@ -11,6 +12,18 @@ const i18n = {
 };
 
 function Blinker() {
+  return (
+    <svg
+      viewBox="8 4 8 16"
+      xmlns="http://www.w3.org/2000/svg"
+      className="inline w-[1ch] animate-flicker"
+    >
+      <rect x="10" y="6" width="4" height="12" fill="#000" />
+    </svg>
+  );
+}
+
+export function Action() {
   return (
     <svg
       viewBox="8 4 8 16"
@@ -62,7 +75,10 @@ export function I18n() {
         {displayResponse}
         {completedTyping === false ? <Blinker /> : null}
       </Label>
-      <div className="self-end">
+      <div className="flex items-center space-x-2 self-end">
+        <span className="text-xs">
+          Darkmode staat: <Code>uit</Code>
+        </span>
         <Button disabled={completedTyping === false} onClick={startTyping}>
           {completedTyping === false ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />

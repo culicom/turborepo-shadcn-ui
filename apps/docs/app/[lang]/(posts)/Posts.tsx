@@ -37,18 +37,12 @@ export async function Posts({ docs }: any) {
                   doc?.category[0]?.name === "mobile",
               })}
             >
-              <Link
-                href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}`}
-              >
+              <Link href={`/blog/${doc?.category[0]?.slug}`}>
                 {doc?.category[0]?.name}
               </Link>
             </Badge>
             <H3 className="mt-0">
-              <Link
-                href={`/posts/${doc?.type?.slug}/${doc?.category[0]?.slug}/${doc?.slug}`}
-              >
-                {doc?.title}
-              </Link>
+              <Link href={`/blog/${doc?.slug}`}>{doc?.title}</Link>
             </H3>
           </CardContent>
         </Card>

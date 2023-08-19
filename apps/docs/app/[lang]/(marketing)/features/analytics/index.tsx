@@ -1,6 +1,8 @@
 import { RadioTower } from "lucide-react";
 import { Badge, Button, Label } from "ui";
 import { Alert, AlertDescription, AlertTitle } from "ui/components/alert";
+import { Status } from "./status";
+import { Code } from "ui/typography";
 
 async function getStats(user) {
   const data = await fetch(
@@ -31,12 +33,13 @@ async function getButtonStats(user) {
       59,
       59,
       999
-    )}&unit=day&timezone=Europe%2FParis`,
+    )}&unit=month&timezone=Europe%2FParis`,
     {
       headers: {
         Authorization: `Bearer ${user.token}`,
         "Content-Type": "application/json",
       },
+      next: { tags: ["analytics"] },
     }
   );
 
@@ -55,6 +58,7 @@ async function getUser() {
       username: process.env.UMAMI_USERNAME,
       password: process.env.UMAMI_PASSWORD,
     }),
+    next: { tags: ["analytics"] },
   });
 
   const user = login.json();
@@ -65,7 +69,7 @@ export async function Analytics() {
   const user = await getUser();
   const data = await getStats(user);
   const buttonData = await getButtonStats(user);
-  console.log(buttonData);
+
   const clickCount = buttonData.find((data) => data.x === "analytics")?.y ?? 0;
 
   return (
@@ -76,8 +80,11 @@ export async function Analytics() {
         Bezoekers
         <Badge className="ml-2">{data?.x > 0 ? data?.x : 1}</Badge>
       </Label>
-      <div className="w-full justify-end mt-4 flex space-x-2">
-        <Button data-umami-event="analytics">Clicks ({clickCount})</Button>
+      <div className="w-full items-center justify-end mt-4 flex space-x-2">
+        <span className="text-xs">
+          Darkmode staat: <Code>uit</Code>
+        </span>
+        <Status>Clicks ({clickCount})</Status>
       </div>
     </div>
   );

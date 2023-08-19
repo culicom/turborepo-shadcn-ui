@@ -9,8 +9,16 @@ export default async function IndexPage(props: any) {
     <div>
       <Hero
         tag="Website nodig?"
-        title="Professionele websites voor (startende) ondernemers."
-        payline="Voor een vast bedrag per maand kun je altijd maatwerk verwachten en ben je zorgeloos online (inclusief hosting en domeinnaam). Tevens is je website maandelijks opzegbaar."
+        title={
+          <span className="inline">
+            Professionele websites voor (startende) ondernemers{" "}
+            <span className="group">
+              <span className="group-hover:hidden inline">🌍</span>
+              <span className="group-hover:inline hidden ">🌎</span>
+            </span>
+          </span>
+        }
+        payline="Voor een vast bedrag per maand krijg je een uniek webontwerp en ben je zorgeloos online (inclusief hosting en domeinnaam). Je website is maandelijks opzegbaar."
       />
 
       <FeatureBlock />

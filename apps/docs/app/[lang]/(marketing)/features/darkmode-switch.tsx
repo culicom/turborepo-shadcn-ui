@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 import { Button, Label, Switch } from "ui";
 import { Moon, SunMedium } from "lucide-react";
-import { P } from "ui/typography";
+import { Code, P } from "ui/typography";
 
 export function DarkmodeSwitch() {
   const { setTheme, theme } = useTheme();
@@ -19,6 +19,9 @@ export function DarkmodeSwitch() {
       </P>
 
       <div className="flex items-center space-x-2 self-end">
+        <span className="text-xs">
+          Darkmode staat: <Code>uit</Code>
+        </span>
         <Button
           className="dark:hidden"
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
