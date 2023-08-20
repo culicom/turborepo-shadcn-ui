@@ -58,6 +58,7 @@ export default async function Page() {
           <Mockup
             index={index}
             key={feature?.slug}
+            slug={feature?.slug}
             title={feature?.title}
             summary={<Renderer content={feature?.richText} />}
             action={components[feature?.slug].action}

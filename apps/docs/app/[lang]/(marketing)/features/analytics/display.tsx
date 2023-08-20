@@ -5,8 +5,19 @@ import { Status } from "./status";
 import { Code } from "ui/typography";
 
 async function getStats(user) {
+  var start = new Date();
+
+  var end = new Date();
+
   const data = await fetch(
-    `${process.env.UMAMI_URI}/api/websites/${process.env.UMAMI_ID}/active`,
+    `${process.env.UMAMI_URI}/api/websites/${
+      process.env.UMAMI_ID
+    }/pageviews?startAt=${start.setUTCFullYear(2022)}&endAt=${end.setUTCHours(
+      23,
+      59,
+      59,
+      999
+    )}&unit=day&timezone=Europe%2FParis`,
     {
       headers: {
         Authorization: `Bearer ${user.token}`,
@@ -18,7 +29,7 @@ async function getStats(user) {
 
   const stats = await data.json();
 
-  return stats[0];
+  return stats;
 }
 
 async function getButtonStats(user) {
@@ -65,26 +76,21 @@ async function getUser() {
   return user;
 }
 
-export async function Analytics() {
+export async function Display() {
   const user = await getUser();
   const data = await getStats(user);
   const buttonData = await getButtonStats(user);
+
+  console.log(data);
 
   const clickCount = buttonData.find((data) => data.x === "analytics")?.y ?? 0;
 
   return (
     <div className="flex  flex-col w-full h-full lg:h-full items-stretch justify-between">
-      <div />
-      <Label className="flex w-full justify-center items-center text-center text-md text-muted-foreground">
-        <RadioTower className="mr-2" />
-        Bezoekers
-        <Badge className="ml-2">{data?.x > 0 ? data?.x : 1}</Badge>
-      </Label>
-      <div className="w-full items-center justify-end mt-4 flex space-x-2">
-        <span className="text-xs">
-          Darkmode staat: <Code>uit</Code>
-        </span>
-        <Status>Clicks ({clickCount})</Status>
+      <div className="mx-auto h-64 flex space-x-2 items-end flex-row">
+        {data?.pageviews?.map((day, index) => (
+          <Status key={day?.x} label={index + 1} y={day?.y} />
+        ))}
       </div>
     </div>
   );

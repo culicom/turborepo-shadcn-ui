@@ -4,17 +4,19 @@ import { useTransition } from "react";
 import { Button } from "ui";
 import { addItem } from "./actions";
 import { Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
 
-export function Status({ children }) {
-  let [isPending, startTransition] = useTransition();
+export function Status({ y, label }) {
   return (
-    <Button
-      data-umami-event="analytics"
-      disabled={isPending}
-      onClick={() => startTransition(() => addItem())}
-    >
-      {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      {children}
-    </Button>
+    <div>
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        viewport={{ once: true }}
+        whileInView={{ height: y / 2 < 200 ? y : 200, opacity: 1 }}
+        transition={{ duration: 0.25, delay: 0.5 }}
+        className={`w-2 bg-gray-200 rounded-sm`}
+      ></motion.div>
+      <span className="text-xs">{label}</span>
+    </div>
   );
 }

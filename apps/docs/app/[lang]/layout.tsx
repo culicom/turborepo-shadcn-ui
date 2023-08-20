@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
-
+import { Toaster } from "ui";
 import { cn } from "@/lib/utils";
 
 import { Adam } from "./../../components/adam";
@@ -53,6 +53,8 @@ export default function RootLayout({ children, params }: any) {
             </div>
 
             <Footer />
+
+            <Toaster />
 
             <TailwindIndicator />
           </ThemeProvider>

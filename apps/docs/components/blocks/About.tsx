@@ -14,7 +14,7 @@ import { H3 } from "ui/typography";
 
 const data = [
   {
-    title: "Zelf te beheren",
+    title: "Door jou te beheren",
     icon: <Combine className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
@@ -28,7 +28,7 @@ const data = [
     ],
   },
   {
-    title: "Functionele websites",
+    title: "Optimale functionaliteit",
     icon: <Boxes className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
@@ -56,7 +56,7 @@ const data = [
     ],
   },
   {
-    title: "SEO",
+    title: "SEO gericht",
     icon: <Search className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
@@ -70,7 +70,7 @@ const data = [
     ],
   },
   {
-    title: "Vertaling",
+    title: "Nog beter vindbaar",
     icon: <Languages className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {

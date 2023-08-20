@@ -47,7 +47,7 @@ export async function Footer() {
               <div className="dark flex sm:justify-start">
                 <Link
                   href="/"
-                  className="group z-20 flex items-centertext-white"
+                  className="group z-20 h-[36px] flex items-centertext-white"
                 >
                   <Logo />
                 </Link>
