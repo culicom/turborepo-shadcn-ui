@@ -1,11 +1,11 @@
 "use client";
-import { cookies } from "next/headers";
+
+import { Loader2 } from "lucide-react";
 import { useTransition } from "react";
 import { Button } from "ui";
-// import { Data } from "./data";
 import { addItem } from "./actions";
-import { Loader2 } from "lucide-react";
-export function Action() {
+
+export function Data({ data }) {
   let [isPending, startTransition] = useTransition();
   return (
     <Button
@@ -13,7 +13,7 @@ export function Action() {
       onClick={() => startTransition(() => addItem())}
     >
       {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      Ophalen
+      Translate
     </Button>
   );
 }

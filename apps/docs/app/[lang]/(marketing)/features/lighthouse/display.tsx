@@ -1,11 +1,7 @@
 "use client";
+
 import { Scores } from "./circular-progress-bar";
 import score from "./score.json";
-import { Code } from "ui/typography";
-
-import { Status } from "./status";
-
-import { Alert, AlertDescription, AlertTitle } from "ui";
 
 import { motion } from "framer-motion";
 import { cn } from "lib";

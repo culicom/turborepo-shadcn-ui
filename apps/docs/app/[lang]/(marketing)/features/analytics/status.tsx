@@ -1,9 +1,5 @@
 "use client";
 
-import { useTransition } from "react";
-import { Button } from "ui";
-import { addItem } from "./actions";
-import { Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Status({ y, label }) {

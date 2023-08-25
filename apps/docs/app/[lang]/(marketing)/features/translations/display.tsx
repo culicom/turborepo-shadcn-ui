@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { Button, Label } from "ui";
 import { Loader2 } from "lucide-react";
@@ -37,16 +37,23 @@ export function Action() {
   );
 }
 
-export function Display() {
+export function Display({ data }) {
   const [completedTyping, setCompletedTyping] = useState(null);
+  const [isTyping, setIsTyping] = useState(null);
   const [nextLocale, setNextLocale] = useState("en");
-  const [displayResponse, setDisplayResponse] = useState(i18n["nl"]);
-  // const fetchData = fetch("/features/i18n")
+  const [displayResponse, setDisplayResponse] = useState(data);
+
+  useEffect(() => {
+    if (isTyping !== true) {
+      startTyping();
+    }
+  }, [data]);
   //   .then((res) => res.json())
   //   .then((x) => console.log(x));
   // console.log(fetchData, "test");
   const startTyping = useCallback(() => {
     setCompletedTyping(false);
+    setIsTyping(true);
     setDisplayResponse("");
 
     setTimeout(() => {
@@ -61,6 +68,7 @@ export function Display() {
         if (i > stringResponse.length) {
           clearInterval(intervalId);
           setCompletedTyping(true);
+          setIsTyping(false);
 
           setNextLocale(nextLocale === "nl" ? "en" : "nl");
         }
@@ -94,18 +102,6 @@ export function Display() {
           <div className="h-2 bg-gray-200 mt-2 block mx-auto rounded-sm"></div>
         </div>
       </motion.div>
-
-      <div className="flex items-center space-x-2 self-end">
-        <span className="text-xs">
-          Darkmode staat: <Code>uit</Code>
-        </span>
-        <Button disabled={completedTyping === false} onClick={startTyping}>
-          {completedTyping === false ? (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          ) : null}
-          {nextLocale === "en" ? "Vertaal naar engels" : "Translate to dutch"}
-        </Button>
-      </div>
     </div>
   );
 }

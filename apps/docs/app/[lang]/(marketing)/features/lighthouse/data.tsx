@@ -5,7 +5,7 @@ import { Button } from "ui";
 import { addItem } from "./actions";
 import { Loader2 } from "lucide-react";
 
-export function Status() {
+export function Data() {
   let [isPending, startTransition] = useTransition();
   return (
     <Button
