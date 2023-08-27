@@ -5,7 +5,8 @@ import score from "./score.json";
 
 import { motion } from "framer-motion";
 import { cn } from "lib";
-
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 async function getLighthouseScores() {
   const res = await fetch("http://localhost:3010/api/lighthouse?limit=1", {
     method: "GET",
@@ -70,10 +71,13 @@ async function getLighthouseScores() {
 // }
 
 export function Display() {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   // const data = await getLighthouseScores()apps/docs/app/[lang]/(marketing)/features/score.json;
   return (
     <>
-      <div className="flex flex-col">
+      <div ref={ref} className="flex flex-col">
         <header className="shadow-sm">
           <nav className="flex items-center justify-between flex-wrap bg-white mx-auto px-4">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -157,15 +161,16 @@ export function Display() {
           ))}
         </div>
       </div>
-      <motion.div
-        initial={{ height: 0 }}
-        whileInView={{ height: 200 }}
-        transition={{ duration: 0.25, delay: 1 }}
-        viewport={{ once: true }}
-        className="w-full bg-gray-100 absolute px-4 self-end bottom-0 flex items-end"
-      >
-        <Scores data={score?.lighthouseResult?.categories} />
-      </motion.div>
+      {isInView ? (
+        <motion.div
+          initial={{ height: 0 }}
+          whileInView={{ height: 175 }}
+          transition={{ duration: 0.25, delay: 1 }}
+          className="border-t w-full bg-gray-100 absolute px-4 self-end bottom-0 flex items-end"
+        >
+          <Scores data={score?.lighthouseResult?.categories} />
+        </motion.div>
+      ) : null}
     </>
   );
 }

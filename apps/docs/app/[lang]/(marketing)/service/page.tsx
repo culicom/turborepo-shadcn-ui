@@ -33,13 +33,13 @@ export default async function Page() {
 
   return (
     <div>
-      <Hero
-        tag="SERVICE"
-        title="Zie wat Kobalt voor uw bedrijf kan betekenen"
-        payline="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec
-            lacus nec urna imperdiet venenatis in at magna. Nulla ultrices
-            semper dui, at maximus risus ultrices id."
-      />
+      {doc?.hero?.basic ? (
+        <Hero
+          tag="SERVICE"
+          title={doc?.hero?.basic?.title}
+          payline={doc?.hero?.basic?.payoff}
+        />
+      ) : null}
 
       <article className="mx-auto my-16 md:my-36 max-w-3xl">
         <Renderer content={doc?.layout[0]?.richText} />

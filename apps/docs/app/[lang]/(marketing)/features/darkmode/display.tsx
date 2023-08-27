@@ -4,31 +4,37 @@ import * as React from "react";
 
 import { Button } from "ui";
 import { Moon, SunMedium } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { cn } from "lib";
 
 export function Display() {
   const [theme, setTheme] = React.useState("light");
-  console.log(theme);
-  return (
-    <div className={`bg-background flex lg:h-full flex-col w-full ${theme}`}>
-      <motion.div
-        className="absolute cursor-pointer z-10"
-        initial={{ x: "50%", y: "50%", height: "200px", width: "200px" }}
-        animate={{ right: 28, height: 20, width: 20, top: 46 }}
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      >
-        <SunMedium className=" text-black h-full w-full dark:hidden" />
-        <Moon className="hidden h-full text-white w-full dark:flex" />
-      </motion.div>
+  const ref = React.useRef(null);
+  const isInView = useInView(ref);
+  React.useEffect(() => {
+    console.log(isInView);
+    if (isInView) {
+      setTimeout(() => {
+        setTheme("dark");
 
+        setTimeout(() => {
+          setTheme("light");
+        }, 500);
+      }, 2000);
+    }
+  }, [isInView]);
+  return (
+    <div
+      ref={ref}
+      className={`bg-background flex lg:h-full flex-col w-full ${theme}`}
+    >
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.25, delay: 1.5 }}
+        transition={{ duration: 0.25, delay: 0.5 }}
         className="flex flex-col"
       >
-        <header className="shadow-sm">
+        {/* <header className="shadow-sm">
           <nav className="flex items-center justify-between flex-wrap bg-background mx-auto px-4">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
               <div className="h-4 bg-gray-500 w-16 block mx-auto rounded-sm"></div>
@@ -39,6 +45,7 @@ export function Display() {
                 <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
                 <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
                 <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
+                
               </button>
             </div>
 
@@ -56,6 +63,71 @@ export function Display() {
                 <li className="mr-3">
                   <div className="h-2 bg-gray-400 dark:bg-white w-16 mt-2 block mx-auto rounded-sm"></div>
                 </li>
+              </ul>
+            </div>
+          </nav>
+        </header> */}
+        <header className="shadow-sm">
+          <nav className="flex items-center justify-between flex-wrap bg-background mx-auto px-4">
+            <div className="flex items-center flex-shrink-0 text-white mr-6">
+              <a
+                className="text-white no-underline hover:text-white hover:no-underline pl-2"
+                href="#"
+              >
+                <div className="h-4 bg-gray-500 w-16 block mx-auto rounded-sm"></div>
+              </a>
+            </div>
+
+            <div className="block lg:hidden">
+              <button id="nav-toggle" className="focus:outline-none">
+                <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
+                <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
+                <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
+              </button>
+            </div>
+
+            <div
+              className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0"
+              id="nav-content"
+            >
+              <ul className="list-reset lg:flex justify-end flex-1 items-center">
+                <li className="mr-3">
+                  <a
+                    className="inline-block py-2 px-4 active:text-gray-900 no-underline"
+                    href="#"
+                  >
+                    <div className="h-2 bg-gray-400 w-16 mt-2 block mx-auto rounded-sm"></div>
+                  </a>
+                </li>
+                <li className="mr-3">
+                  <a
+                    className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                    href="#"
+                  >
+                    <div className="h-2 bg-gray-400 w-16 mt-2 block mx-auto rounded-sm"></div>
+                  </a>
+                </li>
+                <li className="mr-3">
+                  <a
+                    className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                    href="#"
+                  >
+                    <div className="h-2 bg-gray-400 w-16 mt-2 block mx-auto rounded-sm"></div>
+                  </a>
+                </li>
+                <motion.div
+                  className="cursor-pointer z-10"
+                  onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                >
+                  <SunMedium
+                    width={16}
+                    className=" text-black h-full w-full dark:hidden"
+                  />
+                  <Moon
+                    width={16}
+                    className="hidden h-full text-white w-full dark:flex"
+                  />
+                </motion.div>
               </ul>
             </div>
           </nav>

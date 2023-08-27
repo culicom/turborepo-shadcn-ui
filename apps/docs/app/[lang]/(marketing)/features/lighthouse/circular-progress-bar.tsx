@@ -91,7 +91,6 @@ export function CircularProgressBar(props: CircularProps) {
 }
 
 export function Scores({ data }: any) {
-  console.log(data, "PDDDATA");
   return (
     <span className="w-full flex flex-wrap justify-center self-center">
       {data ? (
@@ -132,16 +131,6 @@ export function Scores({ data }: any) {
               <div className="flex space-x-1 fit-content ">
                 <div className="w-2 h-2 bg-green-600 mt-4 rounded-sm"></div>
                 <div className="w-20 h-2 bg-gray-500 mt-4 rounded-sm"></div>
-              </div>
-            </div>
-            <div className="flex justify-around">
-              <div className="flex space-x-1 fit-content ">
-                <div className="w-2 h-2 bg-green-600 mt-4 rounded-sm"></div>
-                <div className="w-20 h-2 bg-gray-500 mt-4 rounded-sm"></div>
-              </div>
-              <div className="flex space-x-1 fit-content ">
-                <div className="w-2 h-2 bg-green-600 mt-4 rounded-sm"></div>
-                <div className="w-16 h-2 bg-gray-500 mt-4 rounded-sm"></div>
               </div>
             </div>
           </motion.div>

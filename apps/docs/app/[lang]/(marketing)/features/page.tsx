@@ -8,6 +8,9 @@ import { Translations } from "./translations";
 import { Lighthouse } from "./lighthouse";
 import { Darkmode } from "./darkmode";
 import { Analytics } from "./analytics";
+import { CMS } from "./cms";
+import { SEO } from "./seo";
+import { Integrations } from "./integrations";
 
 const components = {
   cookies: Cookie,
@@ -15,6 +18,9 @@ const components = {
   i18n: Translations,
   analytics: Analytics,
   lighthouse: Lighthouse,
+  cms: CMS,
+  seo: SEO,
+  integrations: Integrations,
 };
 
 async function getPage() {
@@ -25,7 +31,8 @@ async function getPage() {
       headers: {
         "Content-Type": "application/json",
       },
-      next: { revalidate: 60 },
+      cache: "no-store",
+      next: { revalidate: 0 },
     }
   );
 
@@ -39,18 +46,22 @@ export default async function Page() {
 
   return (
     <div>
-      <Hero
-        tag="FEATURES"
-        title="What makes Kobalt different"
-        payline="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec lacus nec urna imperdiet venenatis in at magna. Nulla ultrices semper dui, at maximus risus ultrices id."
-      />
+      {doc?.hero?.basic ? (
+        <Hero
+          tag="FEATURES"
+          title={doc?.hero?.basic?.title}
+          payline={doc?.hero?.basic?.payoff}
+        />
+      ) : null}
       <div className={"lg:space-y-32 my-16 md:my-36 "}>
         {doc?.layout[1]?.list?.map((feature, index) =>
-          React.createElement(components[feature?.slug], {
-            index,
-            title: feature?.title,
-            summary: <Renderer content={feature?.richText} />,
-          })
+          components[feature?.slug]
+            ? React.createElement(components[feature?.slug], {
+                index,
+                title: feature?.title,
+                summary: <Renderer content={feature?.richText} />,
+              })
+            : null
         )}
       </div>
     </div>

@@ -2,12 +2,15 @@
 
 import { cn } from "lib";
 import { Alert, AlertDescription, AlertTitle } from "ui";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export function Display() {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
   return (
     <>
-      <div className="flex flex-col">
+      <div ref={ref} className="flex flex-col">
         <header className="shadow-sm">
           <nav className="flex items-center justify-between flex-wrap bg-white mx-auto px-4">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -91,19 +94,32 @@ export function Display() {
           ))}
         </div>
       </div>
-      <motion.div
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.25, delay: 1.5 }}
-        className="w-full absolute px-4 self-end md:h-fit h-72 flex items-end"
-      >
-        <Alert className="h-fit self-end [&:has(svg)]:pl-4">
-          <AlertTitle>Wij sturen al je informatie op naar Google!</AlertTitle>
-          <AlertDescription>
-            Door gebruik te maken van deze website accepteer je dit automatisch.
-          </AlertDescription>
-        </Alert>
-      </motion.div>
+
+      {isInView ? (
+        <motion.div
+          initial={{ height: 0 }}
+          whileInView={{ height: 200 }}
+          transition={{ duration: 0.25, delay: 1 }}
+          className="w-full bg-gray-100 absolute px-4 self-end bottom-0 flex items-end"
+        >
+          <span className="w-full flex flex-wrap justify-center self-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.25, delay: 2 }}
+              className="w-full"
+            >
+              <div className="flex  w-full justify-around">
+                <div className="flex flex-col space-x-1 ">
+                  <div className="w-2/3 h-4 bg-gray-500 mt-4 block mx-auto rounded-sm"></div>
+                  <div className="w-24 h-2 bg-gray-500 mt-4 rounded-sm"></div>
+                </div>
+              </div>
+            </motion.div>
+          </span>
+        </motion.div>
+      ) : null}
     </>
   );
 }
