@@ -1,21 +1,10 @@
+import React from "react";
 import { Hero } from "../../../../components/blocks/Hero";
 import { TimeLineBlock } from "../../../../components/blocks/TimeLine";
 import { Renderer } from "../../../../components/renderer";
-
-async function getPage() {
-  const data = await fetch(
-    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/pages?where[slug][equals]=service&locale=nl&depth=5`,
-    {
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      next: { revalidate: 60 },
-    }
-  );
-
-  return data.json();
-}
+import { Techniques } from "../../../../components/techniques";
+import { Article } from "../../../../components/blocks/Article";
+import { PostBlock } from "../../../../components/blocks/Posts";
 
 type Props = {
   params?: {
@@ -26,26 +15,54 @@ type Props = {
   };
 };
 
-export default async function Page() {
-  const data = await getPage();
+const components = {
+  timeline: TimeLineBlock,
+  postblock: PostBlock,
+  article: Article,
+};
 
+async function getPage(lang) {
+  const data = await fetch(
+    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/pages?where[slug][equals]=service&locale=${lang}&depth=5`,
+    {
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      next: { revalidate: 0 },
+    }
+  );
+
+  return data.json();
+}
+
+export default async function Page({ params: { lang } }) {
+  const data = await getPage(lang);
+  console.log(data);
   const doc = data?.docs[0];
 
   return (
     <div>
       {doc?.hero?.basic ? (
         <Hero
-          tag="SERVICE"
+          tag="Service"
           title={doc?.hero?.basic?.title}
           payline={doc?.hero?.basic?.payoff}
         />
       ) : null}
 
-      <article className="mx-auto my-16 md:my-36 max-w-3xl">
-        <Renderer content={doc?.layout[0]?.richText} />
-      </article>
+      <Techniques />
 
-      <TimeLineBlock {...doc?.layout[2]} />
+      {console.log(doc)}
+
+      {doc?.layout?.map((feature) =>
+        components[feature?.blockType]
+          ? React.createElement(components[feature?.blockType], {
+              locale: lang,
+              ...feature,
+            })
+          : null
+      )}
     </div>
   );
 }

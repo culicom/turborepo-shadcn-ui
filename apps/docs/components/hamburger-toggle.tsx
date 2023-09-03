@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { siteConfig } from "../config/site";
 import { cn } from "lib";
 import {
+  Button,
   Sheet,
   SheetContent,
   SheetDescription,
@@ -26,9 +27,11 @@ export function HamburgerToggle() {
 
   return (
     <Sheet onOpenChange={() => toggleOpen(!open)} open={open}>
-      <SheetTrigger className="flex md:hidden">
-        <Icons.menu />
-        <span className="sr-only">Toggle menu</span>
+      <SheetTrigger className="flex md:hidden" asChild>
+        <Button variant="ghost" size="sm">
+          <Icons.menu />
+          <span className="sr-only">Toggle menu</span>
+        </Button>
       </SheetTrigger>
       <SheetContent position="top" size="full">
         <SheetHeader className="h-full">

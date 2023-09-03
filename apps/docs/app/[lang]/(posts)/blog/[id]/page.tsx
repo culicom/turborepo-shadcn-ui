@@ -9,11 +9,14 @@ import { Title } from "../../Title";
 
 type QueryType = {
   id: string;
+  lang: string;
 };
 
-async function getPost({ id }: QueryType) {
+async function getPost({ id, lang }: QueryType) {
   const data = await fetch(
-    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?where[slug][equals]=${id}`,
+    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${
+      lang || "nl"
+    }&where[slug][equals]=${id}`,
     {
       credentials: "include",
       headers: {
@@ -26,9 +29,7 @@ async function getPost({ id }: QueryType) {
 }
 
 export default async function Page(props: any) {
-  const data = await getPost({
-    id: props?.params?.id,
-  });
+  const data = await getPost({ ...props?.params });
 
   const doc = data?.docs[0];
 

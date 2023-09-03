@@ -12,6 +12,6 @@ export async function GET(request: Request) {
   const currentLocale = cookies().get("currentLocale")?.value || "nl";
 
   return NextResponse.json({
-    data: currentLocale === "nl" ? "en" : "nl",
+    data: currentLocale,
   });
 }

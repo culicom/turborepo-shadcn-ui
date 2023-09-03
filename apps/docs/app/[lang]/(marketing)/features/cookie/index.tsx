@@ -22,7 +22,7 @@ export async function Cookie(props) {
   const { data } = await res.json();
 
   return (
-    <section className={cn("grid grid-cols-1 py-8 lg:grid-cols-2 my-16")}>
+    <>
       <Section {...props}>
         <Data acceptCookies={data} />
       </Section>
@@ -30,6 +30,6 @@ export async function Cookie(props) {
       <Mockup>
         <Display />
       </Mockup>
-    </section>
+    </>
   );
 }

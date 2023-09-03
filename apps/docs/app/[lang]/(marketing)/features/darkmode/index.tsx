@@ -9,12 +9,12 @@ import { Section } from "../section";
 
 export async function Darkmode(props) {
   return (
-    <section className={cn("grid grid-cols-1 py-8 lg:grid-cols-2 my-16")}>
+    <>
       <Section {...props}></Section>
 
       <Mockup>
         <Display />
       </Mockup>
-    </section>
+    </>
   );
 }

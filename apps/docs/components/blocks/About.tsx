@@ -1,21 +1,22 @@
 import {
-  AppWindow,
-  Boxes,
-  Combine,
-  Languages,
-  PaintBucket,
-  Search,
+  AppWindow as AppWindowIcon,
+  Boxes as BoxesIcon,
+  Combine as CombineIcon,
+  Languages as LanguagesIcon,
+  PaintBucket as PaintBucketIcon,
+  Search as SearchIcon,
 } from "lucide-react";
 import { Renderer } from "../renderer";
 import { H2 } from "ui/typography/h2";
 import { H4 } from "ui/typography/h4";
 import { P } from "ui/typography/p";
 import { H3 } from "ui/typography";
+import React from "react";
 
 const data = [
   {
     title: "Door jou te beheren",
-    icon: <Combine className=" w-16 h-16 text-blue-950 dark:text-white " />,
+    icon: <CombineIcon className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
         children: [
@@ -29,7 +30,7 @@ const data = [
   },
   {
     title: "Optimale functionaliteit",
-    icon: <Boxes className=" w-16 h-16 text-blue-950 dark:text-white " />,
+    icon: <BoxesIcon className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
         children: [
@@ -43,7 +44,9 @@ const data = [
   },
   {
     title: "Professioneel webdesign",
-    icon: <PaintBucket className=" w-16 h-16 text-blue-950 dark:text-white " />,
+    icon: (
+      <PaintBucketIcon className=" w-16 h-16 text-blue-950 dark:text-white " />
+    ),
     richText: [
       {
         children: [
@@ -57,7 +60,7 @@ const data = [
   },
   {
     title: "SEO gericht",
-    icon: <Search className=" w-16 h-16 text-blue-950 dark:text-white " />,
+    icon: <SearchIcon className=" w-16 h-16 text-blue-950 dark:text-white " />,
     richText: [
       {
         children: [
@@ -71,7 +74,9 @@ const data = [
   },
   {
     title: "Nog beter vindbaar",
-    icon: <Languages className=" w-16 h-16 text-blue-950 dark:text-white " />,
+    icon: (
+      <LanguagesIcon className=" w-16 h-16 text-blue-950 dark:text-white " />
+    ),
     richText: [
       {
         children: [
@@ -85,7 +90,9 @@ const data = [
   },
   {
     title: "Software as a Service",
-    icon: <AppWindow className=" w-16 h-16 text-blue-950 dark:text-white " />,
+    icon: (
+      <AppWindowIcon className=" w-16 h-16 text-blue-950 dark:text-white " />
+    ),
     richText: [
       {
         children: [
@@ -99,30 +106,38 @@ const data = [
   },
 ];
 
-export function AboutBlock() {
+const Icons = {
+  AppWindow: AppWindowIcon,
+  Boxes: BoxesIcon,
+  Combine: CombineIcon,
+  Languages: LanguagesIcon,
+  PaintBucket: PaintBucketIcon,
+  Search: SearchIcon,
+};
+
+export function AboutBlock({ title, richText, columns }) {
   return (
     <div className="my-16 md:my-36">
       <article className="mx-auto max-w-3xl md:text-center">
         <H4>Onze websites</H4>
 
         <H2 className="dark:text-white text-blue-950 mt-0 border-none">
-          Kobalt.
+          {title}
         </H2>
 
-        <P className="text-lg text-muted-foreground">
-          Kobalt helpt (startende) ondernemers aan een professionele website
-          zonder zorgen. Dit doet Kobalt door moderne en op maat gemaakte
-          websites aan te bieden voor een vast bedrag per maand. Aantrekkelijker
-          krijg je het niet.
-        </P>
+        <Renderer content={richText} />
       </article>
 
       <ul className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        {data?.map((item) => (
+        {columns?.map((item) => (
           <li className="prose py-8 px-0" key={item?.title}>
             <div>
               <div className="flex justify-center text-center">
-                {item?.icon}
+                {Icons[item?.icon]
+                  ? React.createElement(Icons[item?.icon], {
+                      className: " w-16 h-16 text-blue-950 dark:text-white ",
+                    })
+                  : null}
               </div>
               <H3 className="mt-8 text-center text-blue-700 font-semibold tracking-tight">
                 {item?.title}

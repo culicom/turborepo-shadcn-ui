@@ -11,18 +11,58 @@ import { P } from "ui/typography/p";
 import { Badge, Button, Card, CardContent, CardHeader } from "ui";
 import { badges } from "../../lib/colors";
 
+const text = {
+  blog: {
+    nl: {
+      title: "Het laatste nieuws",
+      text: "Ben je benieuwd naar de kennis die schuilgaat achter onze ideeën? Lees dan onze blogposts.",
+      action: "Ga naar blog",
+    },
+    en: {
+      title: "The latest news",
+      text: "Curious about the Knowledge Behind Our Ideas? Read Our Blog Posts.",
+      action: "Go to blog",
+    },
+  },
+  showcase: {
+    nl: {
+      title: "Waar we trots op zijn",
+      text: (
+        <>
+          Hieronder zie je een greep uit het werk van Kobalt. We maken
+          razendsnelle websites die <span>gebruiksvriendelijk</span>,{" "}
+          <span>toegankelijk</span> en <span>modern</span> zijn. Dat doen we
+          altijd passend bij jouw huisstijl. Bekijk onze showcase en laat je
+          inspireren.
+        </>
+      ),
+    },
+    en: {
+      title: "Work we are proud of",
+      text: (
+        <>
+          Hieronder zie je een greep uit het werk van Kobalt. We maken
+          razendsnelle websites die <span>gebruiksvriendelijk</span>,{" "}
+          <span>toegankelijk</span> en <span>modern</span> zijn. Dat doen we
+          altijd passend bij jouw huisstijl. Bekijk onze showcase en laat je
+          inspireren.
+        </>
+      ),
+    },
+  },
+};
+
 type QueryType = {
   token: string;
   locale: string;
-  id: string;
 };
 
 async function getPosts(PostProps: QueryType) {
   const data = await fetch(
-    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${PostProps?.locale}&where[type][equals]=${PostProps.id}&limit=3`,
+    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${PostProps?.locale}&where[type][equals]=63e29b5845a339dda4a01787&limit=3`,
     {
       credentials: "include",
-      next: { revalidate: 60 },
+      next: { revalidate: 0 },
       headers: {
         "Content-Type": "application/json",
       },
@@ -32,51 +72,34 @@ async function getPosts(PostProps: QueryType) {
   return data.json();
 }
 
-type PostType = {
-  id: string;
-  name: string;
-};
-
 type PostBlockType = {
   token: string;
   locale: string;
-  type: { value: PostType };
+  type: string;
 };
 
 export async function PostBlock({
   token,
   locale,
-  type: {
-    value: { id, name },
-  },
-}: PostBlockType) {
-  const data = await getPosts({ token, locale, id });
+  type,
+}: // type: {
+//   value: { id, name },
+// },
+PostBlockType) {
+  const data = await getPosts({ token, locale });
 
   if (!data.docs) return null;
 
   return (
     <div className="my-16 md:my-36">
       <article className="mx-auto my-12 max-w-3xl md:text-center">
-        <H4>{name}</H4>
+        <H4>{type}</H4>
         <H2 className="text-blue-950 dark:text-white mt-0 border-none">
-          {name === "showcase" ? "Waar we trots op zijn" : "Het laatste nieuws"}
+          {text?.[type]?.[locale]?.title}
         </H2>
 
         <P className="text-lg text-muted-foreground">
-          {name === "showcase" ? (
-            <>
-              Hieronder zie je een greep uit het werk van Kobalt. We maken
-              razendsnelle websites die <span>gebruiksvriendelijk</span>,{" "}
-              <span>toegankelijk</span> en <span>modern</span> zijn. Dat doen we
-              altijd passend bij jouw huisstijl. Bekijk onze showcase en laat je
-              inspireren.
-            </>
-          ) : (
-            <>
-              Ben je benieuwd naar de kennis die schuilgaat achter onze ideeën?
-              Lees dan onze blogposts.
-            </>
-          )}
+          {text?.[type]?.[locale]?.text}
         </P>
       </article>
 
@@ -121,9 +144,8 @@ export async function PostBlock({
       </div>
 
       <Button variant="link" className="flex justify-end" asChild>
-        <Link className=" " href={`/${name === "blog" ? "blog" : "showcase"}`}>
-          {name === "showcase" ? "Zie meer werk " : "Ga naar blog "}{" "}
-          <span className="ml-2">→</span>
+        <Link className=" " href={`/${type === "blog" ? "blog" : "showcase"}`}>
+          {text?.[type]?.[locale]?.action} <span className="ml-2">→</span>
         </Link>
       </Button>
     </div>

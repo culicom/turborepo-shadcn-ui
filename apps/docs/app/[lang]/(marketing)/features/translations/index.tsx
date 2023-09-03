@@ -23,7 +23,7 @@ export async function Translations(props) {
   const { data } = await res.json();
 
   return (
-    <section className={cn("grid grid-cols-1 py-8 lg:grid-cols-2 my-16")}>
+    <>
       <Section {...props}>
         <Data data={data} />
       </Section>
@@ -31,6 +31,6 @@ export async function Translations(props) {
       <Mockup>
         <Display data={data} />
       </Mockup>
-    </section>
+    </>
   );
 }

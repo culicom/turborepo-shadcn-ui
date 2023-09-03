@@ -32,9 +32,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children, params }: any) {
+  console.log(params, "aaaa");
   return (
     <>
-      <html lang="nl" suppressHydrationWarning>
+      <html lang={params?.lang || "nl"} suppressHydrationWarning>
         <head />
         <body
           className={cn(
@@ -43,7 +44,19 @@ export default function RootLayout({ children, params }: any) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="container flex min-h-screen flex-col">
+            {/* <div className="fixed z-0 w-full">
+              <div className="grid z-0 gap-4 container mx-auto grid-cols-12">
+                {new Array(12).fill(0).map((col, index) => (
+                  <div
+                    className="z-0 bg-red-100 opacity-30 h-screen"
+                    key={index}
+                  >
+                    a
+                  </div>
+                ))}
+              </div>
+            </div> */}
+            <div className="z-10 relative container flex min-h-screen flex-col">
               <SiteHeader />
 
               {children}
@@ -52,7 +65,7 @@ export default function RootLayout({ children, params }: any) {
               <ProfileForm />
             </div>
 
-            <Footer />
+            <Footer {...params} />
 
             <Toaster />
 

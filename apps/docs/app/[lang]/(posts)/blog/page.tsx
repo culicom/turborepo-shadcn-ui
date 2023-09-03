@@ -1,16 +1,28 @@
 import { Posts } from "../Posts";
 import { Title } from "../Title";
 
-type QueryType = {
-  locale: string;
-  sort: string;
+const text = {
+  nl: {
+    title: "Het laatste nieuws",
+    text: "Ben je benieuwd naar de kennis die schuilgaat achter onze ideeën? Lees dan onze blogposts.",
+    action: "Ga naar blog",
+  },
+  en: {
+    title: "The latest news",
+    text: "Curious about the Knowledge Behind Our Ideas? Read Our Blog Posts.",
+    action: "Go to blog",
+  },
 };
 
-async function getPosts(props: QueryType) {
+type QueryType = {
+  lang: string;
+};
+
+async function getPosts({ lang = "nl" }: QueryType) {
   const filters = `&where[type.slug][equals]=blog`;
 
   const data = await fetch(
-    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${props?.locale}${filters}`,
+    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${lang}${filters}`,
     {
       credentials: "include",
       headers: {
@@ -24,8 +36,7 @@ async function getPosts(props: QueryType) {
 
 export default async function Page(props: any) {
   const data = await getPosts({
-    locale: "nl",
-    sort: "desc",
+    ...props?.params,
   });
 
   if (!data.docs) return null;
@@ -33,9 +44,9 @@ export default async function Page(props: any) {
   return (
     <>
       <Title
-        type="blog"
-        title="Het laatste nieuws"
-        description="Ben je benieuwd naar de kennis die schuilgaat achter onze ideeën? Lees dan onze blogposts."
+        type="BLOG"
+        title={text?.[props?.params?.lang]?.title}
+        description={text?.[props?.params?.lang]?.text}
       />
       <Posts docs={data?.docs} />
     </>

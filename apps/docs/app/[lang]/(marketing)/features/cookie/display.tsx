@@ -8,6 +8,8 @@ import { useRef } from "react";
 export function Display() {
   const ref = useRef(null);
   const isInView = useInView(ref);
+
+  console.log(isInView);
   return (
     <>
       <div ref={ref} className="flex flex-col">

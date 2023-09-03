@@ -6,6 +6,7 @@ import { siteConfig } from "../config/site";
 import { HamburgerToggle } from "./hamburger-toggle";
 import { Logo } from "./logo";
 import { ThemeToggle } from "./theme-toggle";
+import { LocaleToggle } from "./locale-toggle";
 
 export function SiteHeader() {
   return (
@@ -38,8 +39,9 @@ export function SiteHeader() {
                 )}
               </div>
             ) : null}
+            <LocaleToggle />
+
             <ThemeToggle />
-            {/* <LocaleToggle /> */}
             <HamburgerToggle />
           </nav>
         </div>

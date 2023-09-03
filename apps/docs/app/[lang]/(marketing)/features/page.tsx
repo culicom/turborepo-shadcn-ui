@@ -11,6 +11,7 @@ import { Analytics } from "./analytics";
 import { CMS } from "./cms";
 import { SEO } from "./seo";
 import { Integrations } from "./integrations";
+import { cn } from "lib";
 
 const components = {
   cookies: Cookie,
@@ -23,15 +24,14 @@ const components = {
   integrations: Integrations,
 };
 
-async function getPage() {
+async function getPage(lang) {
   const data = await fetch(
-    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/pages?where[slug][equals]=feature&locale=nl&depth=5`,
+    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/pages?where[slug][equals]=feature&locale=${lang}&depth=5`,
     {
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
-      cache: "no-store",
       next: { revalidate: 0 },
     }
   );
@@ -39,9 +39,9 @@ async function getPage() {
   return data.json();
 }
 
-export default async function Page() {
-  const data = await getPage();
-
+export default async function Page({ params: { lang } }) {
+  const data = await getPage(lang);
+  console.log(data);
   const doc = data?.docs[0];
 
   return (
@@ -55,13 +55,20 @@ export default async function Page() {
       ) : null}
       <div className={"lg:space-y-32 my-16 md:my-36 "}>
         {doc?.layout[1]?.list?.map((feature, index) =>
-          components[feature?.slug]
-            ? React.createElement(components[feature?.slug], {
+          components[feature?.slug] ? (
+            <section
+              key={feature?.slug}
+              className={cn(
+                "px-2 sticky top-0 bg-background items-center z-1000 grid grid-cols-1 py-8 lg:grid-cols-2 my-16 h-screen"
+              )}
+            >
+              {React.createElement(components[feature?.slug], {
                 index,
                 title: feature?.title,
                 summary: <Renderer content={feature?.richText} />,
-              })
-            : null
+              })}
+            </section>
+          ) : null
         )}
       </div>
     </div>

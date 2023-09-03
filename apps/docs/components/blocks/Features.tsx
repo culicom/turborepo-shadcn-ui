@@ -1,4 +1,5 @@
 import { H2 } from "ui/typography/h2";
+import { Renderer } from "../renderer";
 
 const list = [
   {
@@ -18,25 +19,25 @@ const list = [
   },
 ];
 
-export function FeatureBlock() {
+export function FeatureBlock(feature) {
   return (
     <div className="my-16 md:my-36 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
       <H2 className="text-blue-950 dark:text-white border-none">
-        Altijd een werkende website voor €100 per maand:
+        {feature?.title}
+        {/* Altijd een werkende website voor €100 per maand: */}
       </H2>
 
       <div>
         <ul>
-          {list?.map((item, index) => (
+          {feature?.list?.map((item, index) => (
             <li className="mb-8 flex" key={item?.title}>
-              {/* {icons[index]} */}
               <div>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
                   {item?.title}
                 </h3>
-                <p className="leading-7 [&:not(:first-child)]:mt-6">
-                  {item?.richText}
-                </p>
+                {/* <p className="leading-7 [&:not(:first-child)]:mt-6"> */}
+                <Renderer content={item?.richText} />
+                {/* </p> */}
               </div>
             </li>
           ))}

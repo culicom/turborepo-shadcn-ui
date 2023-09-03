@@ -10,7 +10,7 @@ import { Section } from "../section";
 
 export async function Lighthouse(props) {
   return (
-    <section className={cn("grid grid-cols-1 py-8 lg:grid-cols-2 my-16")}>
+    <>
       <Section {...props}>
         <Data />
       </Section>
@@ -18,6 +18,6 @@ export async function Lighthouse(props) {
       <Mockup>
         <Display />
       </Mockup>
-    </section>
+    </>
   );
 }

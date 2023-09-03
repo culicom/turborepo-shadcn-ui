@@ -7,9 +7,9 @@ import { Logo } from "./logo";
 import { H3 } from "ui/typography/h3";
 import { Button } from "ui";
 
-async function getNavItems() {
+async function getNavItems(lang) {
   const data = await fetch(
-    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=nl&limit=4`,
+    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${lang}&limit=4`,
     {
       credentials: "include",
       headers: {
@@ -20,8 +20,8 @@ async function getNavItems() {
   return data.json();
 }
 
-export async function Footer() {
-  const navItems = await getNavItems();
+export async function Footer({ lang }) {
+  const navItems = await getNavItems(lang);
 
   return (
     <>
@@ -38,7 +38,7 @@ export async function Footer() {
         ></path>
       </svg> */}
       <footer
-        className="bg-blue-950 py-4 dark:bg-gray-900"
+        className="bg-blue-950 relative z-10 py-4 dark:bg-gray-900"
         aria-label="Site Footer"
       >
         <div className="container mx-auto py-8 text-white">
