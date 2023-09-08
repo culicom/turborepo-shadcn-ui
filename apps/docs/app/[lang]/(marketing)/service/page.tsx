@@ -43,13 +43,7 @@ export default async function Page({ params: { lang } }) {
 
   return (
     <div>
-      {doc?.hero?.basic ? (
-        <Hero
-          tag="Service"
-          title={doc?.hero?.basic?.title}
-          payline={doc?.hero?.basic?.payoff}
-        />
-      ) : null}
+      {doc?.hero?.basic ? <Hero {...doc?.hero?.basic} /> : null}
 
       <Techniques />
 

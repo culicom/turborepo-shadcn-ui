@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Kobalt.",
+  name: "grids.",
   description: "Professionele websites voor ondernemers.",
   mainNav: [
     {

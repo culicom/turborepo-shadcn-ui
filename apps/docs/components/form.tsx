@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -28,15 +29,70 @@ import { useState } from "react";
 import { AlertCircle, Terminal } from "lucide-react";
 import { Renderer } from "./renderer";
 
+const text = {
+  nl: {
+    title: "Lets get in touch 👋",
+    text: "Waar kan Kobalt je mee van dienst zijn? Vul het contactformulier in en we komen zo snel mogelijk bij je terug. Tot snel!",
+    emailRequired: "Email is verplicht",
+    form: {
+      name: {
+        label: "Naam",
+        placeholder: "John Doe",
+      },
+      company: {
+        label: "Bedrijf",
+        placeholder: "Jouw bedrijf",
+      },
+      email: {
+        label: "Email",
+        placeholder: "John@Doe.nl",
+      },
+      website: {
+        label: "Website",
+        placeholder: "jouwwebsite.nl",
+      },
+      message: {
+        label: "Jouw bericht",
+        placeholder: "Typ een bericht hier",
+      },
+      submit: "Verstuur",
+    },
+  },
+  en: {
+    title: "Lets get in touch 👋",
+    text: "What can Kobalt assist you with? Fill out the contact form, and we'll get back to you as soon as possible. See you soon!",
+    emailRequired: "Email is required",
+    form: {
+      name: {
+        label: "Name",
+        placeholder: "John Doe",
+      },
+      company: {
+        label: "Company",
+        placeholder: "Your company",
+      },
+      email: {
+        label: "Email",
+        placeholder: "John@Doe.com",
+      },
+      website: {
+        label: "Website",
+        placeholder: "yourwebsite.com",
+      },
+      message: {
+        label: "Your message",
+        placeholder: "Write something here",
+      },
+      submit: "Send",
+    },
+  },
+};
+
 const profileFormSchema = z
   .object({
     name: z.string(),
     company: z.string(),
-    email: z
-      .string({
-        required_error: "Please select an email to display.", // translate
-      })
-      .email(),
+    email: z.string().email(),
     website: z.string().url(),
     message: z.string(),
   })
@@ -46,7 +102,7 @@ type ProfileFormValues = z.infer<typeof profileFormSchema>;
 
 const defaultValues: Partial<ProfileFormValues> = {};
 
-export function ProfileForm() {
+export function ProfileForm({ lang }) {
   const [confirmationMessage, setConfirmationMessage] = useState(null);
   const [errors, setErrors] = useState(null);
   const form = useForm<ProfileFormValues>({
@@ -92,12 +148,9 @@ export function ProfileForm() {
       <article className="md:text-center">
         <H4>contact</H4>
         <H2 className="text-blue-950 dark:text-white mt-0 border-none">
-          Lets get in touch 👋
+          {text[lang]?.title}
         </H2>
-        <P className="text-lg text-muted-foreground">
-          Waar kan Kobalt je mee van dienst zijn? Vul het contactformulier in en
-          we komen zo snel mogelijk bij je terug. Tot snel!
-        </P>
+        <P className="text-lg text-muted-foreground">{text[lang]?.text}</P>
       </article>
 
       <div className="mx-auto max-w-4xl gap-2 rounded-lg py-12 md:my-12 md:p-8 md:shadow-lg">
@@ -106,17 +159,20 @@ export function ProfileForm() {
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-4 mb-4"
           >
-            <div className="flex flex-col md:flex-row w-full space-x-8">
+            <div className="flex flex-col md:flex-row w-full space-y-4 md:space-y-0 md:space-x-8">
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
                   <FormItem className="md:w-1/2">
                     <FormLabel className="text-black dark:text-white">
-                      Name
+                      {text[lang]?.form?.name?.label}
                     </FormLabel>
                     <FormControl>
-                      <Input placeholder="John Doe" {...field} />
+                      <Input
+                        placeholder={text[lang]?.form?.name?.placeholder}
+                        {...field}
+                      />
                     </FormControl>
 
                     <FormMessage className="text-red-500" />
@@ -129,10 +185,13 @@ export function ProfileForm() {
                 render={({ field }) => (
                   <FormItem className="md:w-1/2">
                     <FormLabel className="text-black dark:text-white">
-                      Bedrijf
+                      {text[lang]?.form?.company?.label}
                     </FormLabel>
                     <FormControl>
-                      <Input placeholder="Jouw bedrijf hier" {...field} />
+                      <Input
+                        placeholder={text[lang]?.form?.company?.placeholder}
+                        {...field}
+                      />
                     </FormControl>
 
                     <FormMessage className="text-red-500" />
@@ -147,10 +206,13 @@ export function ProfileForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-black dark:text-white">
-                    Huidige website
+                    {text[lang]?.form?.website?.label}
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="huidigewebsite.nl" {...field} />
+                    <Input
+                      placeholder={text[lang]?.form?.website?.placeholder}
+                      {...field}
+                    />
                   </FormControl>
 
                   <FormMessage className="text-red-500" />
@@ -163,12 +225,12 @@ export function ProfileForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-black dark:text-white">
-                    Email *
+                    {text[lang]?.form?.email?.label}
                   </FormLabel>
                   <FormControl>
                     <Input
                       type="email"
-                      placeholder="jouw@email.nl"
+                      placeholder={text[lang]?.form?.email?.placeholder}
                       {...field}
                     />
                   </FormControl>
@@ -184,10 +246,13 @@ export function ProfileForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-black dark:text-white">
-                    Message *
+                    {text[lang]?.form?.message?.label}
                   </FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Jouw bericht" {...field} />
+                    <Textarea
+                      placeholder={text[lang]?.form?.name?.placeholder}
+                      {...field}
+                    />
                   </FormControl>
 
                   <FormMessage className="text-red-500" />
@@ -200,7 +265,7 @@ export function ProfileForm() {
               variant="action"
               type="submit"
             >
-              Verstuur
+              {text[lang]?.form?.submit}
             </Button>
           </form>
         </Form>

@@ -1,4 +1,4 @@
-import { Card } from "ui";
+// @ts-nocheck
 import React from "react";
 import { H2, H4 } from "ui/typography";
 import { cn } from "lib";
@@ -14,8 +14,7 @@ export function Section({ summary, title, index, children }: SummaryProps) {
   return (
     <div
       className={cn(
-        " mb-4 flex flex-col justify-center space-y-4 md:mb-0 md:mx-8",
-        index % 2 === 0 ? "order-1" : "order-0"
+        " mb-4 flex flex-col justify-center space-y-4 md:mb-0 md:mx-8"
       )}
     >
       <div>

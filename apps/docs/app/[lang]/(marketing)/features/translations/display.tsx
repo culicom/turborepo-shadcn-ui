@@ -83,7 +83,7 @@ export function Display({ data }) {
   return (
     <div
       ref={ref}
-      className="flex flex-col h-72 lg:h-full w-full items-stretch justify-between"
+      className="flex flex-col h-[400px] overflow-hidden lg:h-full w-full items-stretch justify-between"
     >
       <header className="shadow-sm">
         <nav className="flex items-center justify-between flex-wrap bg-white mx-auto px-4">
@@ -92,15 +92,22 @@ export function Display({ data }) {
               className="text-white no-underline hover:text-white hover:no-underline pl-2"
               href="#"
             >
-              <div className="h-4 bg-gray-500 w-16 block mx-auto rounded-sm"></div>
+              <div className="h-4 bg-gray-500 w-12 block mx-auto rounded-sm"></div>
             </a>
           </div>
 
-          <div className="block lg:hidden">
+          <div className="flex lg:hidden">
+            <a
+              className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+              href="#"
+            >
+              {data === "en" ? "🏴󠁧󠁢󠁥󠁮󠁧󠁿" : "🇳🇱"}
+            </a>
+
             <button id="nav-toggle" className="focus:outline-none">
-              <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
-              <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
-              <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
+              <div className="h-0.5 bg-gray-300 w-4 mb-1 block mx-auto rounded-sm"></div>
+              <div className="h-0.5 bg-gray-300 w-4 mb-1 block mx-auto rounded-sm"></div>
+              <div className="h-0.5 bg-gray-300 w-4 mb-1 block mx-auto rounded-sm"></div>
             </button>
           </div>
 
@@ -114,7 +121,7 @@ export function Display({ data }) {
                   className="inline-block py-2 px-4 active:text-gray-900 no-underline"
                   href="#"
                 >
-                  <div className="h-2 bg-gray-400 w-16 mt-2 block mx-auto rounded-sm"></div>
+                  <div className="h-2 bg-gray-400 w-12 mt-2 block mx-auto rounded-sm"></div>
                 </a>
               </li>
               <li className="mr-3">
@@ -122,7 +129,7 @@ export function Display({ data }) {
                   className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
                   href="#"
                 >
-                  <div className="h-2 bg-gray-400 w-16 mt-2 block mx-auto rounded-sm"></div>
+                  <div className="h-2 bg-gray-400 w-12 mt-2 block mx-auto rounded-sm"></div>
                 </a>
               </li>
               <li className="mr-3">
@@ -130,7 +137,7 @@ export function Display({ data }) {
                   className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
                   href="#"
                 >
-                  <div className="h-2 bg-gray-400 w-16 mt-2 block mx-auto rounded-sm"></div>
+                  <div className="h-2 bg-gray-400 w-12 mt-2 block mx-auto rounded-sm"></div>
                 </a>
               </li>
               <li className="mr-3">
@@ -155,7 +162,7 @@ export function Display({ data }) {
             }}
             exit={{ opacity: 1 }}
             key={card}
-            className={cn("w-1/3")}
+            className={cn("lg:w-1/3 md:w-1/2 w-full")}
           >
             <div className="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-2">
               <div className="h-20 bg-gray-200 block mx-auto rounded-sm"></div>

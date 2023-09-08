@@ -62,9 +62,10 @@ async function getPosts(PostProps: QueryType) {
     `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${PostProps?.locale}&where[type][equals]=63e29b5845a339dda4a01787&limit=3`,
     {
       credentials: "include",
-      next: { revalidate: 0 },
+      cache: "no-store",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `users API-Key ec5a5c3d-c78f-491b-997d-dd9ae1d24bdb`,
       },
     }
   );
@@ -113,10 +114,13 @@ PostBlockType) {
                   src={doc?.featured?.url}
                   height={500}
                   width={500}
-                  className={cn("my-auto mx-auto object-cover", {
-                    "aspect-square": doc?.type?.name === "showcase",
-                    "aspect-[5/3]": doc?.type?.name === "blog",
-                  })}
+                  className={cn(
+                    "my-auto mx-auto object-cover filter dark:invert",
+                    {
+                      "aspect-square": doc?.type?.name === "showcase",
+                      "aspect-[5/3]": doc?.type?.name === "blog",
+                    }
+                  )}
                 />
               </Link>
             </CardHeader>

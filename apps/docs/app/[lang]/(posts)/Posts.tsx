@@ -19,12 +19,15 @@ export async function Posts({ docs }: any) {
                 src={doc?.featured?.url}
                 height={500}
                 width={500}
-                className={cn("my-auto mx-auto object-cover", {
-                  "aspect-square":
-                    doc?.type?.name === "showcase" ||
-                    doc?.type?.name === "work",
-                  "aspect-[5/3]": doc?.type?.name === "blog",
-                })}
+                className={cn(
+                  "my-auto mx-auto object-cover filter dark:invert",
+                  {
+                    "aspect-square":
+                      doc?.type?.name === "showcase" ||
+                      doc?.type?.name === "work",
+                    "aspect-[5/3]": doc?.type?.name === "blog",
+                  }
+                )}
               />
             </Link>
           </CardHeader>

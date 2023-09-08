@@ -6,10 +6,16 @@ import { H1, H4, P } from "ui/typography";
 
 import { buttonVariants } from "ui";
 
+type LinkType = {
+  label: string;
+  url: any;
+};
+
 type Props = {
   tag: string;
   title: any;
-  payline: string;
+  payoff: string;
+  link: LinkType;
 };
 
 export function Hero(props: Props) {
@@ -24,7 +30,7 @@ export function Hero(props: Props) {
       >
         <H4>{props?.tag}</H4>
         <H1 className="md:pb-4">{props?.title}</H1>
-        <P className="text-lg text-muted-foreground">{props?.payline}</P>
+        <P className="text-lg text-muted-foreground">{props?.payoff}</P>
       </motion.div>
       <motion.div
         initial={{ x: 4, opacity: 0 }}
@@ -32,8 +38,11 @@ export function Hero(props: Props) {
         transition={{ duration: 0.25, delay: 1 }}
         viewport={{ once: true }}
       >
-        <a href="#contact" className={buttonVariants({ variant: "action" })}>
-          Neem contact op
+        <a
+          href={props?.link?.url}
+          className={buttonVariants({ variant: "action" })}
+        >
+          {props?.link?.label}
         </a>
       </motion.div>
     </section>

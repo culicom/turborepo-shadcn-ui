@@ -32,7 +32,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children, params }: any) {
-  console.log(params, "aaaa");
   return (
     <>
       <html lang={params?.lang || "nl"} suppressHydrationWarning>
@@ -57,12 +56,12 @@ export default function RootLayout({ children, params }: any) {
               </div>
             </div> */}
             <div className="z-10 relative container flex min-h-screen flex-col">
-              <SiteHeader />
+              <SiteHeader lang={params?.lang} />
 
               {children}
 
               <Adam />
-              <ProfileForm />
+              <ProfileForm {...params} />
             </div>
 
             <Footer {...params} />

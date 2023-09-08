@@ -77,7 +77,7 @@ export function Display() {
   // const data = await getLighthouseScores()apps/docs/app/[lang]/(marketing)/features/score.json;
   return (
     <>
-      <div ref={ref} className="flex flex-col">
+      <div ref={ref} className="flex w-full flex-col">
         <header className="shadow-sm">
           <nav className="flex items-center justify-between flex-wrap bg-white mx-auto px-4">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -85,15 +85,15 @@ export function Display() {
                 className="text-white no-underline hover:text-white hover:no-underline pl-2"
                 href="#"
               >
-                <div className="h-4 bg-gray-500 w-16 block mx-auto rounded-sm"></div>
+                <div className="h-4 bg-gray-500 w-12 block mx-auto rounded-sm"></div>
               </a>
             </div>
 
-            <div className="block lg:hidden">
+            <div className="block mt-2 lg:hidden">
               <button id="nav-toggle" className="focus:outline-none">
-                <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
-                <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
-                <div className="h-1 bg-gray-300 w-8 mb-1 block mx-auto rounded-sm"></div>
+                <div className="h-0.5 bg-gray-300 w-4 mb-1 block mx-auto rounded-sm"></div>
+                <div className="h-0.5 bg-gray-300 w-4 mb-1 block mx-auto rounded-sm"></div>
+                <div className="h-0.5 bg-gray-300 w-4 mb-1 block mx-auto rounded-sm"></div>
               </button>
             </div>
 
@@ -107,7 +107,16 @@ export function Display() {
                     className="inline-block py-2 px-4 active:text-gray-900 no-underline"
                     href="#"
                   >
-                    <div className="h-2 bg-gray-400 w-16 mt-2 block mx-auto rounded-sm"></div>
+                    <div className="h-2 bg-gray-400 w-12 mt-2 block mx-auto rounded-sm"></div>
+                  </a>
+                </li>
+
+                <li className="mr-3">
+                  <a
+                    className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                    href="#"
+                  >
+                    <div className="h-2 bg-gray-400 w-12 mt-2 block mx-auto rounded-sm"></div>
                   </a>
                 </li>
                 <li className="mr-3">
@@ -115,23 +124,7 @@ export function Display() {
                     className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
                     href="#"
                   >
-                    <div className="h-2 bg-gray-400 w-16 mt-2 block mx-auto rounded-sm"></div>
-                  </a>
-                </li>
-                <li className="mr-3">
-                  <a
-                    className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                    href="#"
-                  >
-                    <div className="h-2 bg-gray-400 w-16 mt-2 block mx-auto rounded-sm"></div>
-                  </a>
-                </li>
-                <li className="mr-3">
-                  <a
-                    className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                    href="#"
-                  >
-                    <div className="h-2 bg-gray-400 w-16 mt-2 block mx-auto rounded-sm"></div>
+                    <div className="h-2 bg-gray-400 w-12 mt-2 block mx-auto rounded-sm"></div>
                   </a>
                 </li>
               </ul>

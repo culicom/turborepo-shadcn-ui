@@ -46,20 +46,14 @@ export default async function Page({ params: { lang } }) {
 
   return (
     <div>
-      {doc?.hero?.basic ? (
-        <Hero
-          tag="FEATURES"
-          title={doc?.hero?.basic?.title}
-          payline={doc?.hero?.basic?.payoff}
-        />
-      ) : null}
+      {doc?.hero?.basic ? <Hero {...doc?.hero?.basic} /> : null}
       <div className={"lg:space-y-32 my-16 md:my-36 "}>
         {doc?.layout[1]?.list?.map((feature, index) =>
           components[feature?.slug] ? (
             <section
               key={feature?.slug}
               className={cn(
-                "px-2 sticky top-0 bg-background items-center z-1000 grid grid-cols-1 py-8 lg:grid-cols-2 my-16 h-screen"
+                "px-2 lg:sticky lg:top-0 bg-background items-center z-1000 grid grid-cols-1 py-8 lg:grid-cols-2 my-16 lg:h-screen"
               )}
             >
               {React.createElement(components[feature?.slug], {

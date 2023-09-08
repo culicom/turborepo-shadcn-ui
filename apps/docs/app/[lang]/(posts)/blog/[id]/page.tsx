@@ -12,11 +12,9 @@ type QueryType = {
   lang: string;
 };
 
-async function getPost({ id, lang }: QueryType) {
+async function getPost({ id, lang = "nl" }: QueryType) {
   const data = await fetch(
-    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${
-      lang || "nl"
-    }&where[slug][equals]=${id}`,
+    `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/posts?locale=${lang}&where[slug][equals]=${id}`,
     {
       credentials: "include",
       headers: {
@@ -50,10 +48,13 @@ export default async function Page(props: any) {
             src={doc?.featured?.url}
             height={600}
             width={600}
-            className={cn("my-auto mx-auto w-full object-cover", {
-              "aspect-[6/4]": doc.type?.name === "blog",
-              "aspect-square": doc.type?.name === "showcase",
-            })}
+            className={cn(
+              "my-auto mx-auto w-full object-cover filter dark:invert",
+              {
+                "aspect-[6/4]": doc.type?.name === "blog",
+                "aspect-square": doc.type?.name === "showcase",
+              }
+            )}
           />
         </div>
 

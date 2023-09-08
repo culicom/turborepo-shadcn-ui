@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 
 import * as React from "react";
@@ -54,7 +55,7 @@ export function LocaleToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm">
-          <Globe className="rotate-0 scale-100 dark:-rotate-90 mr-2" />
+          <Globe className="rotate-0 w-5 h-5 scale-100 dark:-rotate-90 mr-2" />
           {currentLocale} <span className="sr-only">Toggle Languages</span>
         </Button>
       </DropdownMenuTrigger>
